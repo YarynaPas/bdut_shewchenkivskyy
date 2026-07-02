@@ -12,6 +12,7 @@ import gurtkyRouter from "./routers/gurtky.router";
 import nabirRouter from "./routers/nabir.router";
 import { userRouter } from "./routers/user.router";
 import rozkladRouter from "./routers/rozklad.router";
+import psychologyRouter from "./routers/psychology.router";
 
 const app = express();
 
@@ -36,8 +37,7 @@ app.use('/employee', employeesRouter);
 app.use('/gurtky', gurtkyRouter);
 app.use('/nabir', nabirRouter);
 app.use('/rozklad', rozkladRouter);
-
-// FIX: '/{*path}' замість '*'
+app.use('/psychology', psychologyRouter)
 app.use('/{*path}', (err: Error, req: Request, res: Response, next: NextFunction) => {
     if (err instanceof ApiError) {
         res.status(err.statusCode || 500).send(err.message);
