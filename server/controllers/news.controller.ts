@@ -15,11 +15,30 @@ const upload = multer({
     storage,
     limits: { fileSize: 10 * 1024 * 1024 },
 }).fields([
-    { name: 'main_photo', maxCount: 1 },
-    { name: 'photos', maxCount: 6 }
+    { name: "main_photo", maxCount: 1 },
+    { name: "photos", maxCount: 6 },
+    { name: "video", maxCount: 1 }
+]);
+const VIDEO_TYPES = new Set([
+    "video/mp4",
+    "video/webm",
+    "video/quicktime",
 ]);
 
 class NewsController {
+    private async processVideo(file: Express.Multer.File): Promise<string> {
+        const ext = path.extname(file.originalname);
+
+        const fileName =
+            `${Date.now()}-${Math.random().toString(36).slice(2, 8)}${ext}`;
+
+        await fs.promises.writeFile(
+            path.join(UPLOAD_DIR, fileName),
+            file.buffer
+        );
+
+        return `/uploads/news/${fileName}`;
+    }
     private getFullImageUrl(req: Request, filePath: string | null): string | null {
         if (!filePath) return null;
         return `${req.protocol}://${req.get('host')}${filePath}`;
@@ -41,20 +60,54 @@ class NewsController {
 
     createNews: RequestHandler = (req, res) => {
         upload(req, res, async (err) => {
-            if (err) return res.status(400).json({ message: err.message });
+            if (err) {
+                return res.status(400).json({
+                    message: err.message,
+                });
+            }
 
-            const files = req.files as { [fieldname: string]: Express.Multer.File[] };
-            const { title, description, short_description } = req.body;
+            const files = req.files as {
+                [fieldname: string]: Express.Multer.File[];
+            };
 
-            if (!title || !files['main_photo']?.[0]) {
-                return res.status(400).json({ message: 'Title and main photo are required' });
+            const {
+                title,
+                description,
+                short_description,
+            } = req.body;
+
+            if (!title) {
+                return res.status(400).json({
+                    message: "Title is required",
+                });
+            }
+
+            if (!files["main_photo"]?.[0]) {
+                return res.status(400).json({
+                    message: "Main photo is required",
+                });
             }
 
             try {
-                const mainPhotoPath = await this.processImage(files['main_photo'][0].buffer);
-                const otherPhotos = files['photos']
-                    ? await Promise.all(files['photos'].map(f => this.processImage(f.buffer)))
-                    : [];
+                const mainPhotoFile = files["main_photo"][0];
+                const photoFiles = files["photos"] || [];
+                const videoFile = files["video"]?.[0];
+
+                const mainPhotoPath = await this.processImage(
+                    mainPhotoFile.buffer
+                );
+
+                const otherPhotos = await Promise.all(
+                    photoFiles.map((file) =>
+                        this.processImage(file.buffer)
+                    )
+                );
+
+                let videoPath: string | null = null;
+
+                if (videoFile) {
+                    videoPath = await this.processVideo(videoFile);
+                }
 
                 const news = await News.create({
                     title,
@@ -62,21 +115,40 @@ class NewsController {
                     short_description,
                     date: new Date(),
                     main_photo: mainPhotoPath,
-                    photos: otherPhotos.join(','),
+                    photos: otherPhotos.join(","),
+                    video: videoPath,
                 });
 
-                res.status(201).json(news);
+                res.status(201).json({
+                    ...news.toJSON(),
+                    main_photo: this.getFullImageUrl(
+                        req,
+                        news.main_photo
+                    ),
+                    photos: otherPhotos.map((photo) =>
+                        this.getFullImageUrl(req, photo)
+                    ),
+                    video: this.getFullImageUrl(
+                        req,
+                        news.video
+                    ),
+                });
             } catch (e) {
-                res.status(500).json({ message: 'Error creating news' });
+                console.error(e);
+
+                res.status(500).json({
+                    message: "Error creating news",
+                });
             }
         });
     };
 
     getAllNews: RequestHandler = async (req, res) => {
         try {
-            const page = parseInt(req.query.page as string) || 1;
-            const limit = parseInt(req.query.limit as string) || 10;
+            const page = parseInt(req.query["page"] as string) || 1;
+            const limit = parseInt(req.query["limit"] as string) || 10;
             const offset = (page - 1) * limit;
+
 
             const { count, rows } = await News.findAndCountAll({
                 order: [['date', 'DESC']],
@@ -89,6 +161,7 @@ class NewsController {
                     ...item.toJSON(),
                     main_photo: this.getFullImageUrl(req, item.main_photo),
                     photos: item.photos?.split(',').map(p => this.getFullImageUrl(req, p)) || [],
+                    video: this.getFullImageUrl(req, item.video),
                 })),
                 total: count,
                 page,
@@ -154,10 +227,10 @@ class NewsController {
             const news = await News.findByPk(id);
             if (!news) return res.status(404).json({ message: 'Not found' });
 
-            // FIX 5: filter type guard прибирає null зі списку файлів
             const files = [
                 news.main_photo,
-                ...(news.photos ? news.photos.split(',') : []),
+                ...(news.photos ? news.photos.split(",") : []),
+                news.video,
             ].filter((f): f is string => !!f);
 
             await Promise.all(files.map(f => this.deleteFile(f)));

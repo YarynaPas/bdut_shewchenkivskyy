@@ -1,24 +1,37 @@
-import { Model, DataTypes, Optional } from 'sequelize';
-import { sequelize } from '../config/database';
+import { Model, DataTypes, Optional } from "sequelize";
+import { sequelize } from "../config/database";
+
+export type Napryam =
+    | "Художньо-естетичний відділ"
+    | "Гуманітарний відділ"
+    | "Вокально-хореографічний відділ";
 
 export interface GurtkyAttributes {
-    id:number,
-    name:string,
-    teacher:string,
-    description:string,
-    classrom: string,
-    pictograma: string,
-    long_description: string,
-    photos: string
+    id: number;
+    name: string;
+    teacher: string;
+    napryam: Napryam;
+    vikova_grupa: string;
+    description: string;
+    classrom: string;
+    pictograma: string;
+    long_description: string;
+    photos: string;
 }
 
-export interface GurtkyCreationAttributes extends Optional<GurtkyAttributes, 'id'> {}
+export interface GurtkyCreationAttributes
+    extends Optional<GurtkyAttributes, "id"> {}
 
-export class Gurtky extends Model<GurtkyAttributes, GurtkyCreationAttributes> implements GurtkyAttributes {
-    id!:number;
-    name!:string;
-    teacher!:string;
-    description!:string;
+export class Gurtky
+    extends Model<GurtkyAttributes, GurtkyCreationAttributes>
+    implements GurtkyAttributes
+{
+    id!: number;
+    name!: string;
+    teacher!: string;
+    napryam!: Napryam;
+    vikova_grupa!: string;
+    description!: string;
     classrom!: string;
     pictograma!: string;
     long_description!: string;
@@ -32,40 +45,61 @@ Gurtky.init(
             primaryKey: true,
             autoIncrement: true,
         },
+
         name: {
             type: DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
             unique: true,
         },
-        pictograma: {
+
+        teacher: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        teacher: {
-            type: DataTypes.STRING,
-            allowNull: true,
+
+        napryam: {
+            type: DataTypes.ENUM(
+                "Художньо-естетичний відділ",
+                "Гуманітарний відділ",
+                "Вокально-хореографічний відділ"
+            ),
+            allowNull: false,
         },
+
+        vikova_grupa: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+
         description: {
-            type: DataTypes.STRING,
-            allowNull: true,
+            type: DataTypes.TEXT,
+            allowNull: false,
         },
+
         classrom: {
             type: DataTypes.STRING,
             allowNull: true,
         },
-        long_description: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
-        photos: {
+
+        pictograma: {
             type: DataTypes.STRING,
             allowNull: false,
-        }
+        },
+
+        long_description: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+        },
+
+        photos: {
+            type: DataTypes.TEXT,
+            allowNull: true,
+        },
     },
     {
         sequelize,
-        tableName: 'gyrtky',
-        modelName: 'Gurtky',
+        tableName: "gyrtky",
+        modelName: "Gurtky",
         timestamps: false,
         underscored: true,
     }

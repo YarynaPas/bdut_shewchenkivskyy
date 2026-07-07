@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0008442-f8ed-4622-8efc-7da36b0c9a4e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/components/HeaderComponent/HeaderComponent.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/HeaderComponent/HeaderComponent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/pages/golovna.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/models/psychology.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/psychology.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/psychology.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/gurtky.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/gurtky.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/news.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/news.controller.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/gurtky.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/gurtky.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/news.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/news.model.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +22,13 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,7 +51,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/shewchenkivkyy/bdut_shewchenkivskyy/server/routers",
+    "last_opened_file_path": "D:/shewchenkivkyy/bdut_shewchenkivskyy/server",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -51,9 +63,9 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\shewchenkivkyy\bdut_shewchenkivskyy\server" />
       <recent name="D:\shewchenkivkyy\bdut_shewchenkivskyy\server\routers" />
       <recent name="D:\shewchenkivkyy\bdut_shewchenkivskyy\server\controllers" />
-      <recent name="D:\shewchenkivkyy\bdut_shewchenkivskyy\server" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -67,6 +79,7 @@
       <workItem from="1782942056908" duration="1064000" />
       <workItem from="1782944617745" duration="398000" />
       <workItem from="1782949356555" duration="1850000" />
+      <workItem from="1783430293358" duration="1390000" />
     </task>
     <servers />
   </component>

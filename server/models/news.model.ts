@@ -9,6 +9,7 @@ export interface NewsAttributes {
     date: Date;
     main_photo: string | null;
     photos: string | null;
+    video: string | null;
 }
 
 export interface UserCreationAttributes extends Optional<NewsAttributes, 'id'> {}
@@ -21,6 +22,7 @@ export class News extends Model<NewsAttributes, UserCreationAttributes> implemen
     date!: Date;
     main_photo!: string | null;
     photos!: string | null;
+    video!: string | null;
 }
 
 News.init(
@@ -52,6 +54,10 @@ News.init(
             allowNull: true,
         },
         photos: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        video: {
             type: DataTypes.STRING,
             allowNull: true,
         },
