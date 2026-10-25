@@ -1,0 +1,483 @@
+/* ========================= */
+/* GRID */
+/* ========================= */
+
+.grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 30px;
+
+    width: 100%;
+
+}
+
+
+/* ========================= */
+/* EMPTY */
+/* ========================= */
+
+.empty {
+
+    padding: 80px 20px;
+
+    text-align: center;
+
+    color: #666;
+
+    font-size: 20px;
+
+}
+
+
+/* ========================= */
+/* CARD */
+/* ========================= */
+
+.card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border-radius: 30px;
+
+    box-shadow:
+            0 12px 35px rgba(0, 0, 0, .08);
+
+    transition:
+            transform .35s ease,
+            box-shadow .35s ease;
+
+}
+
+.card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+            0 24px 55px rgba(143, 59, 171, .18);
+
+}
+
+
+/* ========================= */
+/* IMAGE */
+/* ========================= */
+
+.imageWrapper {
+
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+
+    height: 250px;
+
+    overflow: hidden;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #f5eafb,
+                    #faf7fc
+            );
+
+}
+
+
+/* ========================= */
+/* IMAGE */
+/* ========================= */
+
+.image {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+            transform .5s ease;
+
+}
+
+.card:hover .image {
+
+    transform: scale(1.07);
+
+}
+
+
+/* ========================= */
+/* WAVE */
+/* ========================= */
+
+.wave {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -2px;
+
+    width: 100%;
+
+    height: 55px;
+
+    fill: #ffffff;
+
+    pointer-events: none;
+
+}
+
+
+/* ========================= */
+/* DEPARTMENT ICON */
+/* ========================= */
+
+.departmentIcon {
+
+    position: absolute;
+
+    top: 18px;
+
+    left: 18px;
+
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 50%;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+            0 8px 22px rgba(0, 0, 0, .13);
+
+    z-index: 5;
+
+    transition:
+            transform .35s ease;
+
+}
+
+.departmentIcon img {
+
+    width: 32px;
+
+    height: 32px;
+
+    object-fit: contain;
+
+}
+
+.card:hover .departmentIcon {
+
+    transform:
+            rotate(-8deg)
+            scale(1.08);
+
+}
+
+
+.ageBadge {
+
+    position: absolute;
+
+    right: 18px;
+
+    bottom: 35px;
+
+    padding: 8px 17px;
+
+    border-radius: 22px;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #8f3bab,
+                    #b652d2
+            );
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 750;
+
+    box-shadow:
+            0 8px 22px rgba(143, 59, 171, .28);
+
+    z-index: 5;
+
+}
+
+
+/* ========================= */
+/* CONTENT */
+/* ========================= */
+
+.content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 24px 25px 25px;
+
+}
+
+
+/* ========================= */
+/* TITLE */
+/* ========================= */
+
+.content h3 {
+
+    min-height: 62px;
+
+    margin: 0 0 20px;
+
+    color: #222;
+
+    font-size: 27px;
+
+    font-weight: 800;
+
+    line-height: 1.25;
+
+    transition:
+            color .3s ease;
+
+}
+
+.card:hover .content h3 {
+
+    color: #8f3bab;
+
+}
+
+
+/* ========================= */
+/* BUTTON */
+/* ========================= */
+
+.button {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    height: 55px;
+
+    border-radius: 17px;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #8f3bab,
+                    #ba5cdc
+            );
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    font-weight: 750;
+
+    text-decoration: none;
+
+    box-shadow:
+            0 8px 20px rgba(143, 59, 171, .12);
+
+    transition:
+            transform .3s ease,
+            box-shadow .3s ease;
+
+}
+
+.button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+            0 14px 32px rgba(143, 59, 171, .27);
+
+}
+
+
+/* ========================= */
+/* ARROW */
+/* ========================= */
+
+.arrow {
+
+    font-size: 23px;
+
+    line-height: 1;
+
+    transition:
+            transform .3s ease;
+
+}
+
+.button:hover .arrow {
+
+    transform:
+            translateX(7px);
+
+}
+
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media (max-width: 1100px) {
+
+    .grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 25px;
+
+    }
+
+}
+
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 700px) {
+
+    .grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+
+    }
+
+    .card {
+
+        max-width: 600px;
+
+        width: 100%;
+
+        margin: 0 auto;
+
+    }
+
+    .imageWrapper {
+
+        height: 240px;
+
+    }
+
+}
+
+
+/* ========================= */
+/* SMALL MOBILE */
+/* ========================= */
+
+@media (max-width: 480px) {
+
+    .card {
+
+        border-radius: 26px;
+
+    }
+
+    .imageWrapper {
+
+        height: 200px;
+
+    }
+
+    .departmentIcon {
+
+        top: 14px;
+
+        left: 14px;
+
+        width: 52px;
+
+        height: 52px;
+
+    }
+
+    .departmentIcon img {
+
+        width: 28px;
+
+        height: 28px;
+
+    }
+
+    .ageBadge {
+
+        right: 14px;
+
+        bottom: 30px;
+
+        padding: 7px 14px;
+
+        font-size: 13px;
+
+    }
+
+    .content {
+
+        padding: 20px;
+
+    }
+
+    .content h3 {
+
+        min-height: auto;
+
+        margin-bottom: 17px;
+
+        font-size: 22px;
+
+    }
+
+    .button {
+
+        height: 52px;
+
+        border-radius: 15px;
+
+        font-size: 16px;
+
+    }
+
+}

@@ -17,7 +17,7 @@ const menu = [
     },
     {
         href: "/reports",
-        title: "Звітність",
+        title: "Інформаційна відкритість",
     },
     {
         href: "/psychology",

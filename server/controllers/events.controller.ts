@@ -147,31 +147,294 @@ class EventsController {
             res.status(500).json({ message: 'Error getting event' });
         }
     };
+    updateEvents: RequestHandler = (req, res) => {
 
+        upload(req, res, async (err: any) => {
+
+            try {
+
+                /* ========================================= */
+                /* MULTER ERROR */
+                /* ========================================= */
+
+                if (err) {
+
+                    console.error(
+                        "Multer error:",
+                        err
+                    );
+
+                    const status =
+                        err instanceof multer.MulterError
+                            ? 400
+                            : 400;
+
+                    return res.status(status).json({
+                        message:
+                            err instanceof Error
+                                ? err.message
+                                : "Помилка завантаження файлу",
+                    });
+
+                }
+
+
+                /* ========================================= */
+                /* ID */
+                /* ========================================= */
+
+                const id =
+                    Number(req.params.id);
+
+
+                if (
+                    Number.isNaN(id)
+                ) {
+
+                    return res.status(400).json({
+                        message: "Invalid id",
+                    });
+
+                }
+
+
+                /* ========================================= */
+                /* FIND EVENT */
+                /* ========================================= */
+
+                const event =
+                    await Event.findByPk(id);
+
+
+                if (!event) {
+
+                    return res.status(404).json({
+                        message: "Event not found",
+                    });
+
+                }
+
+
+                /* ========================================= */
+                /* BODY */
+                /* ========================================= */
+
+                const {
+                    title,
+                    date,
+                    description,
+                } = req.body;
+
+
+                /* ========================================= */
+                /* REQUIRED */
+                /* ========================================= */
+
+                if (!title || !date) {
+
+                    return res.status(400).json({
+                        message:
+                            "Title and date are required!",
+                    });
+
+                }
+
+
+                /* ========================================= */
+                /* FILES */
+                /* ========================================= */
+
+                const files =
+                    req.files as MulterFiles;
+
+
+                let mainPhoto =
+                    event.main_photo;
+
+
+                /* ========================================= */
+                /* NEW MAIN PHOTO */
+                /* ========================================= */
+
+                const mainPhotoFile =
+                    files?.["main_photo"]?.[0];
+
+
+                if (mainPhotoFile) {
+
+                    /*
+                     * Видаляємо стару афішу
+                     */
+
+                    if (
+                        event.main_photo
+                    ) {
+
+                        await this.deleteFile(
+                            event.main_photo
+                        );
+
+                    }
+
+
+                    /*
+                     * Обробляємо нове фото
+                     */
+
+                    mainPhoto =
+                        await this.processImage(
+                            mainPhotoFile.buffer
+                        );
+
+                }
+
+
+                /* ========================================= */
+                /* UPDATE DATABASE */
+                /* ========================================= */
+
+                await event.update({
+
+                    title:
+                        title.trim(),
+
+                    date,
+
+                    description:
+                        description?.trim()
+                        || null,
+
+                    main_photo:
+                    mainPhoto,
+
+                });
+
+
+                /* ========================================= */
+                /* RESPONSE */
+                /* ========================================= */
+
+                return res.status(200).json({
+
+                    ...event.get(),
+
+                    main_photo:
+                        this.getFullImageUrl(
+                            req,
+                            mainPhoto
+                        ),
+
+                });
+
+            } catch (e) {
+
+                console.error(
+                    "Error updating event:",
+                    e
+                );
+
+                return res.status(500).json({
+                    message:
+                        "Error updating event",
+                });
+
+            }
+
+        });
+
+    };
     deleteEvents: RequestHandler = async (req, res) => {
+
         try {
-            // FIX 2: Number() щоб уникнути string | string[]
-            const id = Number(req.params.id);
-            if (isNaN(id)) {
-                res.status(400).json({ message: 'Invalid id' });
-                return;
+
+            /* ========================================= */
+            /* ID */
+            /* ========================================= */
+
+            const id =
+                Number(req.params.id);
+
+
+            if (
+                Number.isNaN(id)
+            ) {
+
+                return res.status(400).json({
+                    message: "Invalid id",
+                });
+
             }
 
-            const event = await Event.findByPk(id);
+
+            /* ========================================= */
+            /* FIND EVENT */
+            /* ========================================= */
+
+            const event =
+                await Event.findByPk(id);
+
+
             if (!event) {
-                res.status(404).json({ message: 'Event not found' });
-                return;
+
+                return res.status(404).json({
+                    message: "Event not found",
+                });
+
             }
 
-            if (event.main_photo) await this.deleteFile(event.main_photo);
+
+            /* ========================================= */
+            /* DELETE PHOTO */
+            /* ========================================= */
+
+            if (
+                event.main_photo
+            ) {
+
+                await this.deleteFile(
+                    event.main_photo
+                );
+
+            }
+
+
+            /* ========================================= */
+            /* DELETE DATABASE RECORD */
+            /* ========================================= */
 
             await event.destroy();
-            res.status(200).json({ message: 'Event deleted successfully' });
+
+
+            /* ========================================= */
+            /* RESPONSE */
+            /* ========================================= */
+
+            return res.status(200).json({
+
+                message:
+                    "Event deleted successfully",
+
+                id,
+
+            });
+
         } catch (e) {
-            console.error('Error deleting event:', e);
-            res.status(500).json({ message: 'Error deleting event' });
+
+            console.error(
+                "Error deleting event:",
+                e
+            );
+
+
+            return res.status(500).json({
+
+                message:
+                    "Error deleting event",
+
+            });
+
         }
-    };
-}
+
+    }}
 
 export const eventsController = new EventsController();

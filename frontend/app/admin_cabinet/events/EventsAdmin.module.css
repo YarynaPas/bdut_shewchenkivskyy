@@ -1,0 +1,1189 @@
+/* ================================================= */
+/* PAGE */
+/* ================================================= */
+
+.page {
+
+    min-height: 100vh;
+
+    padding: 45px 25px 90px;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #faf7fc 0%,
+                    #f4eafa 50%,
+                    #fbf9fd 100%
+            );
+
+}
+
+
+/* ================================================= */
+/* CONTAINER */
+/* ================================================= */
+
+.container {
+
+    width: 100%;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+}
+
+
+/* ================================================= */
+/* HEADER */
+/* ================================================= */
+
+.header {
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 38px;
+
+}
+
+
+.back {
+
+    display: inline-block;
+
+    margin-bottom: 24px;
+
+    color: #8f3bab;
+
+    font-size: 14px;
+
+    font-weight: 750;
+
+    text-decoration: none;
+
+    transition:
+            color .2s ease;
+
+}
+
+
+.back:hover {
+
+    color: #6f2b87;
+
+    text-decoration: underline;
+
+}
+
+
+.overline {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #a14abb;
+
+    font-size: 11px;
+
+    font-weight: 850;
+
+    letter-spacing: 2px;
+
+}
+
+
+.header h1 {
+
+    margin: 0;
+
+    color: #29232c;
+
+    font-size: 42px;
+
+    line-height: 1.15;
+
+    font-weight: 850;
+
+    letter-spacing: -.5px;
+
+}
+
+
+.header p {
+
+    margin: 9px 0 0;
+
+    color: #837a87;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+}
+
+
+/* ================================================= */
+/* ADD BUTTON */
+/* ================================================= */
+
+.addButton {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 54px;
+
+    padding: 0 23px;
+
+    border-radius: 16px;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #8f3bab,
+                    #bb5bdd
+            );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    box-shadow:
+            0 10px 25px
+            rgba(143,59,171,.20);
+
+    transition:
+            transform .25s ease,
+            box-shadow .25s ease;
+
+}
+
+
+.addButton:hover {
+
+    transform:
+            translateY(-3px);
+
+    box-shadow:
+            0 15px 35px
+            rgba(143,59,171,.28);
+
+}
+
+
+.addButton span {
+
+    font-size: 23px;
+
+    line-height: 1;
+
+}
+
+
+/* ================================================= */
+/* LIST */
+/* ================================================= */
+
+.list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+
+}
+
+
+/* ================================================= */
+/* EVENT CARD */
+/* ================================================= */
+
+.card {
+
+    display: grid;
+
+    grid-template-columns:
+        220px
+        minmax(0, 1fr)
+        145px;
+
+    align-items: center;
+
+    gap: 24px;
+
+    padding: 17px;
+
+    border: 1px solid
+    rgba(255,255,255,.9);
+
+    border-radius: 24px;
+
+    background:
+            rgba(255,255,255,.94);
+
+    box-shadow:
+            0 10px 30px
+            rgba(70,35,85,.07);
+
+    transition:
+            transform .25s ease,
+            box-shadow .25s ease,
+            border-color .25s ease;
+
+}
+
+
+.card:hover {
+
+    transform:
+            translateY(-3px);
+
+    border-color:
+            rgba(214,190,222,.7);
+
+    box-shadow:
+            0 17px 40px
+            rgba(70,35,85,.12);
+
+}
+
+
+/* ================================================= */
+/* IMAGE */
+/* ================================================= */
+
+.imageWrapper {
+
+    width: 220px;
+
+    height: 155px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #f4ecf7,
+                    #faf6fb
+            );
+
+}
+
+
+.imageWrapper img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    /*
+     * Для афіші contain,
+     * щоб нічого не обрізалося.
+     */
+
+    object-fit: contain;
+
+    background:
+            #f5eef8;
+
+    transition:
+            transform .4s ease;
+
+}
+
+
+.card:hover .imageWrapper img {
+
+    transform:
+            scale(1.025);
+
+}
+
+
+/* ================================================= */
+/* INFO */
+/* ================================================= */
+
+.info {
+
+    min-width: 0;
+
+}
+
+
+.date {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin-bottom: 9px;
+
+    padding: 6px 11px;
+
+    border-radius: 9px;
+
+    background:
+            #f3e6f7;
+
+    color:
+            #923aaa;
+
+    font-size: 12px;
+
+    font-weight: 750;
+
+}
+
+
+.info h2 {
+
+    margin: 0 0 9px;
+
+    color: #29232c;
+
+    font-size: 23px;
+
+    line-height: 1.25;
+
+    font-weight: 800;
+
+}
+
+
+.info p {
+
+    display: -webkit-box;
+
+    margin: 0;
+
+    max-width: 700px;
+
+    overflow: hidden;
+
+    color: #817884;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+
+    -webkit-line-clamp: 3;
+
+    -webkit-box-orient: vertical;
+
+}
+
+
+/* ================================================= */
+/* ACTIONS */
+/* ================================================= */
+
+.actions {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    min-width: 135px;
+
+}
+
+
+.view,
+.edit,
+.delete {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    min-height: 42px;
+
+    padding: 0 12px;
+
+    box-sizing: border-box;
+
+    border-radius: 12px;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 750;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+            transform .2s ease,
+            background .2s ease,
+            color .2s ease;
+
+}
+
+
+/* ================================================= */
+/* VIEW */
+/* ================================================= */
+
+.view {
+
+    background:
+            #f3edf5;
+
+    color:
+            #714f7d;
+
+}
+
+
+.view:hover {
+
+    background:
+            #e9dcef;
+
+    transform:
+            translateY(-1px);
+
+}
+
+
+/* ================================================= */
+/* EDIT */
+/* ================================================= */
+
+.edit {
+
+    border: none;
+
+    background:
+            #963db3;
+
+    color: white;
+
+}
+
+
+.edit:hover {
+
+    background:
+            #84339f;
+
+    transform:
+            translateY(-1px);
+
+}
+
+
+/* ================================================= */
+/* DELETE */
+/* ================================================= */
+
+.delete {
+
+    border:
+            1px solid #f0d4da;
+
+    background:
+            #fff3f5;
+
+    color:
+            #bd4358;
+
+}
+
+
+.delete:hover:not(:disabled) {
+
+    background:
+            #ffe3e8;
+
+    transform:
+            translateY(-1px);
+
+}
+
+
+.delete:disabled {
+
+    opacity: .65;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+}
+
+
+/* ================================================= */
+/* DELETE SPINNER */
+/* ================================================= */
+
+.deleteSpinner {
+
+    width: 13px;
+
+    height: 13px;
+
+    flex-shrink: 0;
+
+    border: 2px solid
+    rgba(189,67,88,.25);
+
+    border-top-color:
+            #bd4358;
+
+    border-radius: 50%;
+
+    animation:
+            spin .7s linear infinite;
+
+}
+
+
+@keyframes spin {
+
+    to {
+
+        transform:
+                rotate(360deg);
+
+    }
+
+}
+
+
+/* ================================================= */
+/* SUCCESS MESSAGE */
+/* ================================================= */
+
+.success {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-bottom: 20px;
+
+    padding: 14px 17px;
+
+    border:
+            1px solid #d2ecd9;
+
+    border-radius: 15px;
+
+    background:
+            #edf9f1;
+
+    color:
+            #31834b;
+
+}
+
+
+.success span {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 27px;
+
+    height: 27px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+            #45a961;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 850;
+
+}
+
+
+.success p {
+
+    margin: 0;
+
+    font-size: 14px;
+
+    font-weight: 650;
+
+    line-height: 1.4;
+
+}
+
+
+/* ================================================= */
+/* ERROR */
+/* ================================================= */
+
+.error {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-bottom: 20px;
+
+    padding: 14px 17px;
+
+    border:
+            1px solid #ffd9df;
+
+    border-radius: 15px;
+
+    background:
+            #fff0f2;
+
+    color:
+            #bd4055;
+
+}
+
+
+.error > span {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 27px;
+
+    height: 27px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+            #d25367;
+
+    color: white;
+
+    font-weight: 850;
+
+}
+
+
+.error p {
+
+    flex: 1;
+
+    margin: 0;
+
+    font-size: 14px;
+
+    font-weight: 650;
+
+}
+
+
+.error button {
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #a83247;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+}
+
+
+/* ================================================= */
+/* EMPTY */
+/* ================================================= */
+
+.empty {
+
+    padding:
+            85px 30px;
+
+    border-radius: 28px;
+
+    background:
+            rgba(255,255,255,.95);
+
+    text-align: center;
+
+    box-shadow:
+            0 12px 35px
+            rgba(70,35,85,.07);
+
+}
+
+
+.emptyIcon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 65px;
+
+    height: 65px;
+
+    margin:
+            0 auto 17px;
+
+    border-radius: 20px;
+
+    background:
+            #f1e2f6;
+
+    font-size: 29px;
+
+}
+
+
+.empty h2 {
+
+    margin: 0 0 8px;
+
+    color: #302932;
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+}
+
+
+.empty p {
+
+    margin: 0 0 24px;
+
+    color: #8c828f;
+
+    font-size: 15px;
+
+}
+
+
+.emptyButton {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding:
+            0 20px;
+
+    border-radius: 14px;
+
+    background:
+            #963db3;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition:
+            transform .2s ease,
+            background .2s ease;
+
+}
+
+
+.emptyButton:hover {
+
+    background:
+            #83329d;
+
+    transform:
+            translateY(-2px);
+
+}
+
+
+/* ================================================= */
+/* LOADING */
+/* ================================================= */
+
+.loading {
+
+    min-height: 70vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    color:
+            #8a808d;
+
+    font-size: 16px;
+
+}
+
+
+.spinner {
+
+    width: 42px;
+
+    height: 42px;
+
+    border:
+            4px solid #eadcf0;
+
+    border-top-color:
+            #963db3;
+
+    border-radius: 50%;
+
+    animation:
+            spin .8s linear infinite;
+
+}
+
+
+/* ================================================= */
+/* TABLET */
+/* ================================================= */
+
+@media (max-width: 1050px) {
+
+    .card {
+
+        grid-template-columns:
+            180px
+            minmax(0, 1fr)
+            130px;
+
+        gap: 18px;
+
+    }
+
+
+    .imageWrapper {
+
+        width: 180px;
+
+        height: 140px;
+
+    }
+
+
+    .info h2 {
+
+        font-size: 21px;
+
+    }
+
+}
+
+
+/* ================================================= */
+/* SMALL TABLET */
+/* ================================================= */
+
+@media (max-width: 850px) {
+
+    .header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .addButton {
+
+        width: auto;
+
+    }
+
+
+    .card {
+
+        grid-template-columns:
+            170px
+            minmax(0, 1fr);
+
+    }
+
+
+    .imageWrapper {
+
+        width: 170px;
+
+        height: 135px;
+
+    }
+
+
+    .actions {
+
+        grid-column:
+                1 / -1;
+
+        flex-direction: row;
+
+        min-width: 0;
+
+    }
+
+
+    .view,
+    .edit,
+    .delete {
+
+        flex: 1;
+
+    }
+
+}
+
+
+/* ================================================= */
+/* MOBILE */
+/* ================================================= */
+
+@media (max-width: 650px) {
+
+    .page {
+
+        padding:
+                30px 15px 65px;
+
+    }
+
+
+    .header {
+
+        margin-bottom: 28px;
+
+    }
+
+
+    .header h1 {
+
+        font-size: 34px;
+
+    }
+
+
+    .header p {
+
+        font-size: 14px;
+
+    }
+
+
+    .addButton {
+
+        width: 100%;
+
+    }
+
+
+    .card {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 16px;
+
+        padding: 14px;
+
+        border-radius: 21px;
+
+    }
+
+
+    .imageWrapper {
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: 220px;
+
+    }
+
+
+    .imageWrapper img {
+
+        width: 100%;
+
+        height: auto;
+
+        min-height: 220px;
+
+        max-height: 500px;
+
+        object-fit: contain;
+
+    }
+
+
+    .info h2 {
+
+        font-size: 21px;
+
+    }
+
+
+    .info p {
+
+        font-size: 13px;
+
+        -webkit-line-clamp: 4;
+
+    }
+
+
+    .actions {
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 8px;
+
+    }
+
+
+    .view {
+
+        grid-column:
+                1 / -1;
+
+    }
+
+
+    .view,
+    .edit,
+    .delete {
+
+        width: 100%;
+
+    }
+
+}
+
+
+/* ================================================= */
+/* SMALL MOBILE */
+/* ================================================= */
+
+@media (max-width: 430px) {
+
+    .header h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .card {
+
+        border-radius: 19px;
+
+    }
+
+
+    .imageWrapper {
+
+        min-height: 190px;
+
+    }
+
+
+    .imageWrapper img {
+
+        min-height: 190px;
+
+    }
+
+
+    .actions {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .view {
+
+        grid-column: auto;
+
+    }
+
+}

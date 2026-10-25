@@ -1,0 +1,1300 @@
+/* ================================================= */
+/* PAGE */
+/* ================================================= */
+
+.page {
+    min-height: 100vh;
+
+    padding: 50px 24px 90px;
+
+    background:
+            linear-gradient(
+                    180deg,
+                    #faf8fc 0%,
+                    #ffffff 45%,
+                    #ffffff 100%
+            );
+
+    color: #222;
+}
+
+
+/* ================================================= */
+/* CONTAINER */
+/* ================================================= */
+
+.container {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+
+/* ================================================= */
+/* HEADER */
+/* ================================================= */
+
+.header {
+    margin-bottom: 32px;
+}
+
+
+.back {
+    display: inline-flex;
+    align-items: center;
+
+    margin-bottom: 18px;
+
+    color: #8f3bab;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: color .2s ease;
+}
+
+
+.back:hover {
+    color: #702b87;
+}
+
+
+.overline {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #a05ab7;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.header h1 {
+    margin: 0 0 9px;
+
+    color: #292929;
+
+    font-size: 38px;
+    line-height: 1.15;
+    font-weight: 800;
+}
+
+
+.header p {
+    margin: 0;
+
+    color: #888;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* ================================================= */
+/* FORM */
+/* ================================================= */
+
+.form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* ================================================= */
+/* CARD */
+/* ================================================= */
+
+.card {
+    padding: 28px;
+
+    border:
+            1px solid #e8e2eb;
+
+    border-radius: 18px;
+
+    background: #fff;
+
+    box-shadow:
+            0 8px 30px
+            rgba(55, 20, 65, .05);
+}
+
+
+/* ================================================= */
+/* CARD HEADER */
+/* ================================================= */
+
+.cardHeader {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 28px;
+
+    padding-bottom: 20px;
+
+    border-bottom:
+            1px solid #eeeeee;
+}
+
+
+.number {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #f2def7,
+                    #ead0f1
+            );
+
+    color: #8f3bab;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+
+.cardHeader h2 {
+    margin: 0 0 4px;
+
+    color: #333;
+
+    font-size: 20px;
+    font-weight: 750;
+}
+
+
+.cardHeader p {
+    margin: 0;
+
+    color: #999;
+
+    font-size: 13px;
+}
+
+
+/* ================================================= */
+/* FIELD */
+/* ================================================= */
+
+.field {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    margin-bottom: 22px;
+}
+
+
+.field:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ================================================= */
+/* LABEL */
+/* ================================================= */
+
+.labelRow {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+
+.labelRow label {
+    color: #383838;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.required,
+.optional {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 23px;
+
+    padding:
+            0 9px;
+
+    border-radius: 12px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+.required {
+    background: #f8e5e5;
+
+    color: #c04d4d;
+}
+
+
+.optional {
+    background: #f1f1f1;
+
+    color: #888;
+}
+
+
+/* ================================================= */
+/* INPUTS */
+/* ================================================= */
+
+.field input[type="text"],
+.field input[type="number"],
+.field input[type="datetime-local"],
+.field select {
+    width: 100%;
+
+    min-height: 50px;
+
+    padding:
+            0 15px;
+
+    border:
+            1px solid #dedede;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background: #fff;
+
+    color: #333;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition:
+            border-color .2s ease,
+            box-shadow .2s ease,
+            background .2s ease;
+}
+
+
+.field input[type="text"]:focus,
+.field input[type="number"]:focus,
+.field input[type="datetime-local"]:focus,
+.field select:focus {
+    border-color: #b77ac8;
+
+    box-shadow:
+            0 0 0 3px
+            rgba(143, 59, 171, .08);
+}
+
+
+.field input::placeholder {
+    color: #b0b0b0;
+}
+
+
+.field input:disabled,
+.field select:disabled {
+    background: #f8f8f8;
+
+    cursor: not-allowed;
+
+    opacity: .7;
+}
+
+
+/* ================================================= */
+/* SUBCATEGORY CUSTOM TOGGLE */
+/* ================================================= */
+
+.customToggle {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: fit-content;
+
+    margin-top: 3px;
+
+    color: #7f3b96;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    user-select: none;
+}
+
+
+.customToggle input {
+    position: relative;
+
+    width: 18px;
+    height: 18px;
+
+    margin: 0;
+
+    accent-color: #8f3bab;
+
+    cursor: pointer;
+}
+
+
+.customToggle input:disabled {
+    cursor: not-allowed;
+}
+
+
+.help {
+    color: #999;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* ================================================= */
+/* CURRENT FILE */
+/* ================================================= */
+
+.currentFile {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 24px;
+
+    padding: 14px;
+
+    border:
+            1px solid #e5dce8;
+
+    border-radius: 12px;
+
+    background:
+            #fcf9fd;
+}
+
+
+/* ================================================= */
+/* FILE ICON */
+/* ================================================= */
+
+.fileIcon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #f0def5,
+                    #e9d0ef
+            );
+
+    color: #8f3bab;
+
+    font-size: 20px;
+}
+
+
+/* ================================================= */
+/* FILE INFO */
+/* ================================================= */
+
+.fileInfo {
+    display: flex;
+
+    flex: 1;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+    gap: 4px;
+}
+
+
+.fileInfo span {
+    color: #999;
+
+    font-size: 11px;
+}
+
+
+.fileInfo strong {
+    overflow: hidden;
+
+    color: #444;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.fileInfo small {
+    color: #999;
+
+    font-size: 11px;
+}
+
+
+/* ================================================= */
+/* OPEN FILE */
+/* ================================================= */
+
+.openFile {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 36px;
+
+    padding:
+            0 13px;
+
+    border:
+            1px solid #d9c2df;
+
+    border-radius: 8px;
+
+    background: #fff;
+
+    color: #8f3bab;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+            background .2s ease,
+            color .2s ease;
+}
+
+
+.openFile:hover {
+    background: #8f3bab;
+
+    color: white;
+}
+
+
+/* ================================================= */
+/* SELECTED FILE */
+/* ================================================= */
+
+.selectedFile {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 14px;
+
+    border:
+            1px solid #d9ebdd;
+
+    border-radius: 12px;
+
+    background: #f7fcf8;
+}
+
+
+.selectedFile .fileIcon {
+    background: #e1f3e5;
+
+    color: #45a35b;
+}
+
+
+/* ================================================= */
+/* REMOVE FILE */
+/* ================================================= */
+
+.removeFile {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #fff0f0;
+
+    color: #c34d4d;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    transition:
+            background .2s ease,
+            color .2s ease;
+}
+
+
+.removeFile:hover {
+    background: #df5b5b;
+
+    color: white;
+}
+
+
+/* ================================================= */
+/* UPLOAD */
+/* ================================================= */
+
+.upload {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    min-height: 160px;
+
+    padding: 25px;
+
+    border:
+            2px dashed #dcc7e2;
+
+    border-radius: 14px;
+
+    background:
+            #fdfafe;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition:
+            border-color .2s ease,
+            background .2s ease;
+}
+
+
+.upload:hover {
+    border-color: #a967ba;
+
+    background:
+            #faf3fc;
+}
+
+
+.upload input {
+    display: none;
+}
+
+
+.upload > span {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    margin-bottom: 10px;
+
+    border-radius: 50%;
+
+    background: #f0def5;
+
+    color: #8f3bab;
+
+    font-size: 24px;
+
+    font-weight: 500;
+}
+
+
+.upload strong {
+    margin-bottom: 5px;
+
+    color: #555;
+
+    font-size: 14px;
+}
+
+
+.upload small {
+    color: #999;
+
+    font-size: 11px;
+}
+
+
+/* ================================================= */
+/* ERROR */
+/* ================================================= */
+
+.error {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    padding: 14px 17px;
+
+    border:
+            1px solid #f0caca;
+
+    border-radius: 12px;
+
+    background: #fff5f5;
+
+    color: #b74747;
+}
+
+
+.error > span {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #e35b5b;
+
+    color: #fff;
+
+    font-size: 14px;
+
+    font-weight: 800;
+}
+
+
+.error p {
+    margin: 0;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+}
+
+
+/* ================================================= */
+/* SUCCESS */
+/* ================================================= */
+
+.success {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    padding: 14px 17px;
+
+    border:
+            1px solid #cde6d3;
+
+    border-radius: 12px;
+
+    background: #f3fbf5;
+
+    color: #3e8b51;
+}
+
+
+.success > span {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #55ad69;
+
+    color: white;
+
+    font-weight: 800;
+}
+
+
+.success p {
+    margin: 0;
+
+    font-size: 13px;
+}
+
+
+/* ================================================= */
+/* ACTIONS */
+/* ================================================= */
+
+.actions {
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    padding-top: 5px;
+}
+
+
+/* ================================================= */
+/* CANCEL */
+/* ================================================= */
+
+.cancel {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding:
+            0 22px;
+
+    border:
+            1px solid #dedede;
+
+    border-radius: 11px;
+
+    background: white;
+
+    color: #777;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+            background .2s ease,
+            border-color .2s ease,
+            color .2s ease;
+}
+
+
+.cancel:hover {
+    border-color: #cfcfcf;
+
+    background: #f7f7f7;
+
+    color: #444;
+}
+
+
+/* ================================================= */
+/* SAVE */
+/* ================================================= */
+
+.save {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    min-height: 48px;
+
+    padding:
+            0 24px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #8f3bab,
+                    #b94fd2
+            );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+            0 8px 20px
+            rgba(143,59,171,.2);
+
+    transition:
+            transform .2s ease,
+            box-shadow .2s ease,
+            opacity .2s ease;
+}
+
+
+.save > span:last-child {
+    font-size: 18px;
+
+    transition:
+            transform .2s ease;
+}
+
+
+.save:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    box-shadow:
+            0 12px 25px
+            rgba(143,59,171,.28);
+}
+
+
+.save:hover:not(:disabled) > span:last-child {
+    transform: translateX(3px);
+}
+
+
+.save:disabled {
+    opacity: .65;
+
+    cursor: not-allowed;
+}
+
+
+/* ================================================= */
+/* BUTTON SPINNER */
+/* ================================================= */
+
+.buttonSpinner {
+    width: 17px;
+    height: 17px;
+
+    border:
+            2px solid rgba(255,255,255,.35);
+
+    border-top-color: white;
+
+    border-radius: 50%;
+
+    animation:
+            spin .7s linear infinite;
+}
+
+
+/* ================================================= */
+/* LOADING */
+/* ================================================= */
+
+.loading {
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    color: #8f3bab;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+.spinner {
+    width: 38px;
+    height: 38px;
+
+    border:
+            3px solid #eadcf0;
+
+    border-top-color:
+            #8f3bab;
+
+    border-radius: 50%;
+
+    animation:
+            spin .8s linear infinite;
+}
+
+
+@keyframes spin {
+
+    to {
+        transform:
+                rotate(360deg);
+    }
+
+}
+
+
+/* ================================================= */
+/* NOT FOUND */
+/* ================================================= */
+
+.notFound {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    min-height: 500px;
+
+    padding: 40px;
+
+    text-align: center;
+}
+
+
+.notFoundIcon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 65px;
+    height: 65px;
+
+    margin-bottom: 18px;
+
+    border-radius: 50%;
+
+    background: #f8e7e7;
+
+    color: #c24c4c;
+
+    font-size: 25px;
+    font-weight: 800;
+}
+
+
+.notFound h1 {
+    margin:
+            0 0 8px;
+
+    color: #444;
+
+    font-size: 25px;
+}
+
+
+.notFound p {
+    max-width: 500px;
+
+    margin:
+            0 0 22px;
+
+    color: #999;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+.notFound a {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 42px;
+
+    padding:
+            0 17px;
+
+    border-radius: 9px;
+
+    background: #8f3bab;
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+            background .2s ease;
+}
+
+
+.notFound a:hover {
+    background: #762e8e;
+}
+
+
+/* ================================================= */
+/* TABLET */
+/* ================================================= */
+
+@media (max-width: 700px) {
+
+    .page {
+        padding:
+                30px 15px 60px;
+    }
+
+
+    .container {
+        max-width: 100%;
+    }
+
+
+    .header h1 {
+        font-size: 32px;
+    }
+
+
+    .header p {
+        font-size: 14px;
+    }
+
+
+    .card {
+        padding: 20px;
+
+        border-radius: 15px;
+    }
+
+
+    .cardHeader {
+        margin-bottom: 22px;
+    }
+
+
+    .currentFile {
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+    }
+
+
+    .currentFile .openFile {
+        width: 100%;
+    }
+
+
+    .actions {
+        flex-direction: column-reverse;
+
+        width: 100%;
+    }
+
+
+    .cancel,
+    .save {
+        width: 100%;
+    }
+
+}
+
+
+/* ================================================= */
+/* MOBILE */
+/* ================================================= */
+
+@media (max-width: 480px) {
+
+    .page {
+        padding:
+                22px 12px 50px;
+    }
+
+
+    .header {
+        margin-bottom: 25px;
+    }
+
+
+    .header h1 {
+        font-size: 27px;
+    }
+
+
+    .back {
+        font-size: 13px;
+    }
+
+
+    .overline {
+        font-size: 10px;
+    }
+
+
+    .card {
+        padding: 17px;
+    }
+
+
+    .cardHeader {
+        align-items: flex-start;
+
+        gap: 11px;
+    }
+
+
+    .number {
+        width: 36px;
+        height: 36px;
+
+        border-radius: 9px;
+
+        font-size: 11px;
+    }
+
+
+    .cardHeader h2 {
+        font-size: 17px;
+    }
+
+
+    .cardHeader p {
+        font-size: 12px;
+    }
+
+
+    .labelRow {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 6px;
+    }
+
+
+    .required,
+    .optional {
+        font-size: 9px;
+    }
+
+
+    .field input[type="text"],
+    .field input[type="number"],
+    .field input[type="datetime-local"],
+    .field select {
+        min-height: 47px;
+
+        font-size: 13px;
+    }
+
+
+    .customToggle {
+        font-size: 12px;
+    }
+
+
+    .upload {
+        min-height: 145px;
+
+        padding: 18px;
+    }
+
+
+    .currentFile {
+        padding: 11px;
+    }
+
+
+    .fileIcon {
+        width: 42px;
+        height: 42px;
+    }
+
+
+    .fileInfo strong {
+        font-size: 12px;
+    }
+
+
+    .notFound {
+        padding: 25px 10px;
+    }
+
+
+    .notFound h1 {
+        font-size: 21px;
+    }
+
+}

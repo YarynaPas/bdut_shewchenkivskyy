@@ -1,0 +1,1077 @@
+.page {
+
+    min-height: 100vh;
+
+    padding: 45px 20px 90px;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #faf7fc 0%,
+                    #f5eafa 50%,
+                    #fbf9fd 100%
+            );
+
+}
+
+.container {
+
+    width: 100%;
+
+    max-width: 950px;
+
+    margin: 0 auto;
+
+}
+
+
+/* ========================================= */
+/* HEADER */
+/* ========================================= */
+
+.header {
+
+    margin-bottom: 32px;
+
+}
+
+.back {
+
+    display: inline-block;
+
+    margin-bottom: 25px;
+
+    color: #8f3bab;
+
+    font-size: 14px;
+
+    font-weight: 750;
+
+    text-decoration: none;
+
+}
+
+.back:hover {
+
+    text-decoration: underline;
+
+}
+
+.subtitle {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #a14abb;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+.header h1 {
+
+    margin: 0;
+
+    color: #29232c;
+
+    font-size: 42px;
+
+    line-height: 1.15;
+
+    font-weight: 850;
+
+}
+
+.header p {
+
+    margin: 9px 0 0;
+
+    color: #837a87;
+
+    font-size: 16px;
+
+}
+
+
+/* ========================================= */
+/* FORM */
+/* ========================================= */
+
+.form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+
+}
+
+
+/* ========================================= */
+/* SECTION */
+/* ========================================= */
+
+.section {
+
+    padding: 43px;
+
+    border-radius: 26px;
+
+    background:
+            rgba(255,255,255,.94);
+
+    border: 1px solid
+    rgba(255,255,255,.95);
+
+    box-shadow:
+            0 12px 35px
+            rgba(70,35,85,.07);
+
+}
+
+.sectionHeader {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 17px;
+
+    margin-bottom: 30px;
+
+}
+
+.sectionNumber {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 46px;
+
+    height: 46px;
+
+    flex-shrink: 0;
+
+    border-radius: 14px;
+
+    background: #f1e2f6;
+
+    color: #963db3;
+
+    font-size: 13px;
+
+    font-weight: 850;
+
+}
+
+.sectionHeader h2 {
+
+    margin: 0 0 5px;
+
+    color: #302932;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+}
+
+.sectionHeader p {
+
+    margin: 0;
+
+    color: #8b828e;
+
+    font-size: 14px;
+
+}
+
+
+/* ========================================= */
+/* FIELD */
+/* ========================================= */
+
+.field {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+}
+
+.field + .field {
+
+    margin-top: 24px;
+
+}
+
+
+/* ========================================= */
+/* LABEL */
+/* ========================================= */
+
+.labelRow {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+}
+
+.labelRow label {
+
+    color: #3b343d;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+}
+
+.required,
+.optional {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 4px 9px;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+
+    font-weight: 750;
+
+}
+
+.required {
+
+    background: #fce7eb;
+
+    color: #c33d55;
+
+}
+
+.optional {
+
+    background: #eee8f1;
+
+    color: #817687;
+
+}
+
+
+/* ========================================= */
+/* INPUTS */
+/* ========================================= */
+
+.field input[type="text"],
+.field textarea {
+
+    width: 100%;
+
+    border: 1px solid #e4dbe7;
+
+    border-radius: 15px;
+
+    outline: none;
+
+    background: #fcfafd;
+
+    color: #302a33;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    transition:
+            border-color .2s ease,
+            box-shadow .2s ease,
+            background .2s ease;
+
+}
+
+.field input[type="text"] {
+
+    height: 56px;
+
+    padding: 0 17px;
+
+}
+
+.field textarea {
+
+    padding: 15px 17px;
+
+    resize: vertical;
+
+    line-height: 1.6;
+
+}
+
+.field input[type="text"]:focus,
+.field textarea:focus {
+
+    border-color: #a44abb;
+
+    background: #fff;
+
+    box-shadow:
+            0 0 0 4px
+            rgba(164,75,187,.09);
+
+}
+
+
+/* ========================================= */
+/* HINT */
+/* ========================================= */
+
+.hint {
+
+    color: #99909b;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+}
+
+
+/* ========================================= */
+/* MAIN PHOTO */
+/* ========================================= */
+
+.mainPreview {
+
+    position: relative;
+
+    height: 340px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #f5edf7;
+
+}
+
+.mainPreview img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+.previewOverlay {
+
+    position: absolute;
+
+    left: 13px;
+
+    bottom: 13px;
+
+    padding: 8px 12px;
+
+    border-radius: 10px;
+
+    background:
+            rgba(35,25,40,.72);
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    backdrop-filter: blur(8px);
+
+}
+
+.removeButton {
+
+    position: absolute;
+
+    top: 12px;
+
+    right: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 40px;
+
+    height: 40px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+            rgba(35,25,40,.72);
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(8px);
+
+}
+
+.removeButton:hover {
+
+    background: #c43d54;
+
+}
+
+
+/* ========================================= */
+/* UPLOAD */
+/* ========================================= */
+
+.uploadBox {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 120px;
+
+    margin-top: 12px;
+
+    padding: 20px;
+
+    border: 2px dashed #d9c7df;
+
+    border-radius: 19px;
+
+    background: #fcf9fd;
+
+    color: #8d3aa9;
+
+    cursor: pointer;
+
+    text-align: center;
+
+    transition:
+            border-color .2s ease,
+            background .2s ease;
+
+}
+
+.uploadBox:hover {
+
+    border-color: #a44abb;
+
+    background: #f8f0fa;
+
+}
+
+.uploadBox input {
+
+    display: none;
+
+}
+
+.uploadBox > span {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 45px;
+
+    height: 45px;
+
+    margin-bottom: 8px;
+
+    border-radius: 13px;
+
+    background: #f0e1f5;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+}
+
+.uploadBox strong {
+
+    font-size: 14px;
+
+}
+
+.uploadBox small {
+
+    margin-top: 5px;
+
+    color: #9b909e;
+
+}
+
+
+/* ========================================= */
+/* MEDIA */
+/* ========================================= */
+
+.mediaBlock + .mediaBlock {
+
+    margin-top: 30px;
+
+}
+
+.mediaBlock > .labelRow {
+
+    margin-bottom: 12px;
+
+}
+
+
+/* ========================================= */
+/* PHOTOS */
+/* ========================================= */
+
+.photoGrid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+}
+
+.photoItem {
+
+    aspect-ratio: 1;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    background: #f4edf7;
+
+}
+
+.photoItem img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+}
+
+
+/* ========================================= */
+/* VIDEO */
+/* ========================================= */
+
+.video {
+
+    width: 100%;
+
+    max-height: 450px;
+
+    display: block;
+
+    border-radius: 18px;
+
+    background: #19151b;
+
+}
+
+
+/* ========================================= */
+/* NO MEDIA */
+/* ========================================= */
+
+.noMedia {
+
+    padding: 24px;
+
+    border: 1px dashed #dfd2e3;
+
+    border-radius: 15px;
+
+    background: #fcf9fd;
+
+    color: #968b99;
+
+    text-align: center;
+
+    font-size: 14px;
+
+}
+
+.backendNote {
+
+    margin: 10px 0 0;
+
+    color: #a095a3;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+}
+
+
+/* ========================================= */
+/* ACTIONS */
+/* ========================================= */
+
+.actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding-top: 5px;
+
+}
+
+.cancelButton,
+.submitButton {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 54px;
+
+    padding: 0 23px;
+
+    border-radius: 16px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+}
+
+.cancelButton {
+
+    border: 1px solid #e2d6e5;
+
+    background: white;
+
+    color: #776c7b;
+
+}
+
+.cancelButton:hover {
+
+    background: #f8f3fa;
+
+}
+
+.submitButton {
+
+    gap: 12px;
+
+    border: none;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #8f3bab,
+                    #bb5bdd
+            );
+
+    color: white;
+
+    box-shadow:
+            0 10px 25px
+            rgba(143,59,171,.20);
+
+    transition:
+            transform .25s ease,
+            box-shadow .25s ease;
+
+}
+
+.submitButton:hover:not(:disabled) {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+            0 15px 32px
+            rgba(143,59,171,.28);
+
+}
+
+.submitButton:disabled {
+
+    opacity: .7;
+
+    cursor: not-allowed;
+
+}
+
+.submitButton > span {
+
+    font-size: 22px;
+
+}
+
+
+/* ========================================= */
+/* MESSAGES */
+/* ========================================= */
+
+.error,
+.success {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-bottom: 20px;
+
+    padding: 14px 17px;
+
+    border-radius: 15px;
+
+}
+
+.error {
+
+    background: #fff0f2;
+
+    border: 1px solid #ffd9df;
+
+    color: #bd3d52;
+
+}
+
+.success {
+
+    background: #edf9f1;
+
+    border: 1px solid #d3eedb;
+
+    color: #31834b;
+
+}
+
+.error span,
+.success span {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 27px;
+
+    height: 27px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    color: white;
+
+    font-weight: 850;
+
+}
+
+.error span {
+
+    background: #d25367;
+
+}
+
+.success span {
+
+    background: #45a961;
+
+}
+
+.error p,
+.success p {
+
+    margin: 0;
+
+    font-size: 14px;
+
+    font-weight: 650;
+
+}
+
+
+/* ========================================= */
+/* LOADING */
+/* ========================================= */
+
+.loading {
+
+    min-height: 70vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    color: #8b818e;
+
+}
+
+.spinner {
+
+    width: 40px;
+
+    height: 40px;
+
+    border: 4px solid #eadcf0;
+
+    border-top-color: #963db3;
+
+    border-radius: 50%;
+
+    animation:
+            spin .8s linear infinite;
+
+}
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ========================================= */
+/* ERROR PAGE */
+/* ========================================= */
+
+.errorPage {
+
+    max-width: 600px;
+
+    margin: 100px auto;
+
+    padding: 50px;
+
+    border-radius: 26px;
+
+    background: white;
+
+    text-align: center;
+
+    box-shadow:
+            0 15px 40px
+            rgba(70,35,85,.08);
+
+}
+
+.errorPage > div {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 55px;
+
+    height: 55px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #fce7eb;
+
+    color: #c33d55;
+
+    font-size: 25px;
+
+    font-weight: 800;
+
+}
+
+.errorPage h1 {
+
+    margin: 0 0 10px;
+
+    color: #302932;
+
+    font-size: 26px;
+
+}
+
+.errorPage p {
+
+    margin: 0 0 25px;
+
+    color: #8b818e;
+
+}
+
+.backButton {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 48px;
+
+    padding: 0 20px;
+
+    border-radius: 14px;
+
+    background: #963db3;
+
+    color: white;
+
+    font-weight: 750;
+
+    text-decoration: none;
+
+}
+
+
+/* ========================================= */
+/* MOBILE */
+/* ========================================= */
+
+@media (max-width: 700px) {
+
+    .page {
+
+        padding:
+                30px 15px 60px;
+
+    }
+
+    .header h1 {
+
+        font-size: 34px;
+
+    }
+
+    .section {
+
+        padding: 24px 20px;
+
+        border-radius: 22px;
+
+    }
+
+    .photoGrid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .header h1 {
+
+        font-size: 30px;
+
+    }
+
+    .sectionHeader {
+
+        gap: 12px;
+
+    }
+
+    .sectionNumber {
+
+        width: 40px;
+
+        height: 40px;
+
+    }
+
+    .sectionHeader h2 {
+
+        font-size: 19px;
+
+    }
+
+    .mainPreview {
+
+        height: 230px;
+
+    }
+
+    .actions {
+
+        flex-direction: column-reverse;
+
+    }
+
+    .cancelButton,
+    .submitButton {
+
+        width: 100%;
+
+    }
+
+}

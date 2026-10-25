@@ -1,249 +1,524 @@
 import { Request, RequestHandler } from "express";
+import { Psychology } from "../models/psychology.model";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
 import sharp from "sharp";
-import { Psychology } from "../models/psychology.model";
 
 const PUBLIC_DIR = path.join(process.cwd(), "public");
 const UPLOAD_DIR = path.join(PUBLIC_DIR, "uploads", "psychology");
 
-const ALLOWED_MIME_TYPES = new Set([
-    "image/jpeg",
-    "image/jpg",
-    "image/png",
-    "image/gif",
-    "image/svg+xml",
-]);
-
 fs.mkdirSync(UPLOAD_DIR, { recursive: true });
 
-const fileFilter = (
-    _req: Request,
-    file: Express.Multer.File,
-    cb: multer.FileFilterCallback
-) => {
-    ALLOWED_MIME_TYPES.has(file.mimetype)
-        ? cb(null, true)
-        : cb(new Error("Only images are allowed (jpeg, jpg, png, gif, svg)!"));
-};
+const storage = multer.memoryStorage();
 
 const upload = multer({
-    storage: multer.memoryStorage(),
+    storage,
     limits: {
         fileSize: 10 * 1024 * 1024,
-        files: 7,
     },
-    fileFilter,
 }).fields([
     { name: "main_photo", maxCount: 1 },
     { name: "photos", maxCount: 6 },
 ]);
 
-const parseId = (id: string | string[]): number | null => {
-    const raw = Array.isArray(id) ? id[0] : id;
-    const parsed = Number(raw);
-    return isNaN(parsed) ? null : parsed;
-};
-
-const generateFileName = (extension: string) =>
-    `${Date.now()}-${Math.random().toString(36).slice(2, 8)}${extension}`;
-
-const getFullImageUrl = (req: Request, imagePath: string | null): string | null => {
-    if (!imagePath) return null;
-    return `${req.protocol}://${req.get("host")}${imagePath}`;
-};
-
-const processAndSaveImage = async (file: Express.Multer.File, outputName: string): Promise<string> => {
-    const outputPath = path.join(UPLOAD_DIR, outputName);
-
-    if (file.mimetype === "image/svg+xml") {
-        await fs.promises.writeFile(outputPath, file.buffer);
-    } else {
-        await sharp(file.buffer)
-            .resize({ width: 1280, withoutEnlargement: true })
-            .webp({ quality: 82 })
-            .toFile(outputPath);
-    }
-
-    return `/uploads/psychology/${outputName}`;
-};
-
-const removeFile = async (filePath: string) => {
-    await fs.promises.unlink(path.join(PUBLIC_DIR, filePath)).catch(() => null);
-};
-
-interface MulterFiles {
-    [fieldname: string]: Express.Multer.File[];
-}
-
-interface PaginationResult {
-    data: any[];
-    total: number;
-    page: number;
-    pages: number;
-    limit: number;
-}
+const SVG_TYPES = new Set([
+    "image/svg+xml",
+]);
 
 class PsychologyController {
+
+    private getFullImageUrl(req: Request, filePath: string | null): string | null {
+        if (!filePath) return null;
+
+        return `${req.protocol}://${req.get("host")}${filePath}`;
+    }
+
+    private async processImage(file: Express.Multer.File): Promise<string> {
+
+        const isSvg = SVG_TYPES.has(file.mimetype);
+
+        const extension = isSvg ? ".svg" : ".webp";
+
+        const fileName =
+            `${Date.now()}-${Math.random().toString(36).slice(2, 8)}${extension}`;
+
+        const fullPath = path.join(UPLOAD_DIR, fileName);
+
+        if (isSvg) {
+
+            await fs.promises.writeFile(
+                fullPath,
+                file.buffer
+            );
+
+        } else {
+
+            await sharp(file.buffer)
+                .resize({
+                    width: 1200,
+                    withoutEnlargement: true,
+                })
+                .webp({
+                    quality: 82,
+                })
+                .toFile(fullPath);
+
+        }
+
+        return `/uploads/psychology/${fileName}`;
+    }
+
+    private async deleteFile(filePath: string): Promise<void> {
+
+        const fullPath = path.join(
+            PUBLIC_DIR,
+            filePath
+        );
+
+        await fs.promises.unlink(fullPath).catch(() => null);
+
+    }
+
     createPsychology: RequestHandler = (req, res) => {
-        upload(req, res, async (err: any) => {
+
+        upload(req, res, async (err) => {
+
             if (err) {
-                const status = err instanceof multer.MulterError
-                    ? 400
-                    : err.message.includes("Only images")
-                        ? 400
-                        : 500;
 
-                res.status(status).json({ message: err.message });
-                return;
+                return res.status(400).json({
+                    message: err.message,
+                });
+
             }
 
-            const { title, description } = req.body;
-            const files = req.files as MulterFiles;
-            const mainPhotoFile = files["main_photo"]?.[0];
-            const photoFiles = files["photos"] || [];
+            const files = req.files as {
+                [fieldname: string]: Express.Multer.File[];
+            };
 
-            if (!title || !description) {
-                res.status(400).json({ message: "Title and description are required!" });
-                return;
+            const {
+                title,
+                description,
+                long_description,
+            } = req.body;
+
+            if (!title) {
+
+                return res.status(400).json({
+                    message: "Title is required",
+                });
+
             }
 
-            if (!mainPhotoFile) {
-                res.status(400).json({ message: "Main photo is required!" });
-                return;
+            if (!description) {
+
+                return res.status(400).json({
+                    message: "Description is required",
+                });
+
+            }
+
+            if (!files["main_photo"]?.[0]) {
+
+                return res.status(400).json({
+                    message: "Main photo is required",
+                });
+
             }
 
             try {
-                const mainExt = mainPhotoFile.mimetype === "image/svg+xml" ? ".svg" : ".webp";
 
-                const [mainPhotoPath, ...photoPaths] = await Promise.all([
-                    processAndSaveImage(mainPhotoFile, generateFileName(mainExt)),
-                    ...photoFiles.map(file => {
-                        const ext = file.mimetype === "image/svg+xml" ? ".svg" : ".webp";
-                        return processAndSaveImage(file, generateFileName(ext));
-                    })
-                ]);
+                const mainPhoto =
+                    await this.processImage(
+                        files["main_photo"][0]
+                    );
 
-                const psychology = await Psychology.create({
-                    title,
-                    description,
-                    date: new Date(),
-                    main_photo: mainPhotoPath,
-                    photos: photoPaths.join(","),
-                });
+                const otherPhotos =
+                    await Promise.all(
+
+                        (files["photos"] || []).map(file =>
+                            this.processImage(file)
+                        )
+
+                    );
+
+                const psychology =
+                    await Psychology.create({
+
+                        title,
+
+                        description,
+
+                        date: new Date(),
+
+                        main_photo: mainPhoto,
+
+                        long_description,
+
+                        photos: otherPhotos.join(","),
+
+                    });
 
                 res.status(201).json({
-                    ...psychology.get(),
-                    main_photo: getFullImageUrl(req, mainPhotoPath),
-                    photos: photoPaths.map(photo => getFullImageUrl(req, photo)),
+
+                    ...psychology.toJSON(),
+
+                    main_photo: this.getFullImageUrl(
+                        req,
+                        psychology.main_photo
+                    ),
+
+                    photos: otherPhotos.map(photo =>
+                        this.getFullImageUrl(
+                            req,
+                            photo
+                        )
+                    ),
+
                 });
+
             } catch (e) {
-                console.error("Error creating psychology:", e);
-                res.status(500).json({ message: "Error creating psychology" });
+
+                console.error(e);
+
+                res.status(500).json({
+
+                    message: "Error creating psychology",
+
+                });
+
             }
+
         });
+
     };
-
     getAllPsychology: RequestHandler = async (req, res) => {
-        try {
-            const { page: page1, limit: limit1 } = req.query;
-            const page = parseInt(page1 as string) || 1;
-            const limit = parseInt(limit1 as string) || 5;
-            const offset = (page - 1) * limit;
 
-            const { count, rows } = await Psychology.findAndCountAll({
-                order: [["date", "DESC"]],
-                limit,
-                offset,
+        try {
+
+            const page =
+                parseInt(req.query["page"] as string) || 1;
+
+            const limit =
+                parseInt(req.query["limit"] as string) || 10;
+
+            const offset =
+                (page - 1) * limit;
+
+            const { count, rows } =
+                await Psychology.findAndCountAll({
+
+                    order: [["date", "DESC"]],
+
+                    limit,
+
+                    offset,
+
+                });
+
+            res.json({
+
+                data: rows.map(item => ({
+
+                    ...item.toJSON(),
+
+                    main_photo: this.getFullImageUrl(
+                        req,
+                        item.main_photo
+                    ),
+
+                    photos:
+                        item.photos
+                            ?.split(",")
+                            .map(photo =>
+                                this.getFullImageUrl(
+                                    req,
+                                    photo.trim()
+                                )
+                            ) || [],
+
+                })),
+
+                total: count,
+
+                page,
+
+                pages: Math.ceil(count / limit),
+
             });
 
-            const result: PaginationResult = {
-                data: rows.map((item) => {
-                    const data = item.get();
-                    return {
-                        ...data,
-                        main_photo: getFullImageUrl(req, data.main_photo),
-                        photos: data.photos
-                            ? data.photos.split(",").map((photo: string) => getFullImageUrl(req, photo.trim()))
-                            : [],
-                    };
-                }),
-                total: count,
-                page,
-                pages: Math.ceil(count / limit),
-                limit,
-            };
-
-            res.status(200).json(result);
         } catch (e) {
-            console.error("Error getting psychology:", e);
-            res.status(500).json({ message: "Error getting psychology" });
+
+            console.error(e);
+
+            res.status(500).json({
+
+                message: "Error fetching psychology",
+
+            });
+
         }
+
     };
 
     getPsychologyById: RequestHandler = async (req, res) => {
-        const id = parseId(req.params.id);
-
-        if (!id) {
-            res.status(400).json({ message: "Invalid id" });
-            return;
-        }
 
         try {
-            const psychology = await Psychology.findByPk(id);
 
-            if (!psychology) {
-                res.status(404).json({ message: "Psychology not found" });
-                return;
+            const id = Number(req.params.id);
+
+            if (isNaN(id)) {
+
+                return res.status(400).json({
+
+                    message: "Invalid id",
+
+                });
+
             }
 
-            const data = psychology.get();
+            const psychology =
+                await Psychology.findByPk(id);
 
-            res.status(200).json({
-                ...data,
-                main_photo: getFullImageUrl(req, data.main_photo),
-                photos: data.photos
-                    ? data.photos.split(",").map((photo: string) => getFullImageUrl(req, photo.trim()))
-                    : [],
+            if (!psychology) {
+
+                return res.status(404).json({
+
+                    message: "Psychology not found",
+
+                });
+
+            }
+
+            res.json({
+
+                ...psychology.toJSON(),
+
+                main_photo: this.getFullImageUrl(
+                    req,
+                    psychology.main_photo
+                ),
+
+                photos:
+                    psychology.photos
+                        ?.split(",")
+                        .map(photo =>
+                            this.getFullImageUrl(
+                                req,
+                                photo.trim()
+                            )
+                        ) || [],
+
             });
+
         } catch (e) {
-            console.error("Error getting psychology:", e);
-            res.status(500).json({ message: "Error getting psychology" });
+
+            console.error(e);
+
+            res.status(500).json({
+
+                message: "Error fetching psychology",
+
+            });
+
         }
+
     };
 
-    deletePsychology: RequestHandler = async (req, res) => {
-        const id = parseId(req.params.id);
+    updatePsychology: RequestHandler = async (req, res) => {
 
-        if (!id) {
-            res.status(400).json({ message: "Invalid id" });
-            return;
-        }
+        upload(req, res, async (err) => {
+
+            if (err) {
+
+                return res.status(400).json({
+
+                    message: err.message,
+
+                });
+
+            }
+
+            try {
+
+                const id =
+                    Number(req.params.id);
+
+                if (isNaN(id)) {
+
+                    return res.status(400).json({
+
+                        message: "Invalid id",
+
+                    });
+
+                }
+
+                const psychology =
+                    await Psychology.findByPk(id);
+
+                if (!psychology) {
+
+                    return res.status(404).json({
+
+                        message: "Psychology not found",
+
+                    });
+
+                }
+
+                const files =
+                    req.files as {
+                        [fieldname: string]: Express.Multer.File[];
+                    };
+
+                let mainPhoto =
+                    psychology.main_photo;
+
+                if (files["main_photo"]?.[0]) {
+
+                    if (psychology.main_photo) {
+
+                        await this.deleteFile(
+                            psychology.main_photo
+                        );
+
+                    }
+
+                    mainPhoto =
+                        await this.processImage(
+                            files["main_photo"][0]
+                        );
+
+                }
+
+                let photos =
+                    psychology.photos;
+
+                if (
+                    files["photos"] &&
+                    files["photos"].length
+                ) {
+
+                    if (psychology.photos) {
+
+                        await Promise.all(
+
+                            psychology.photos
+                                .split(",")
+                                .map(photo =>
+                                    this.deleteFile(
+                                        photo.trim()
+                                    )
+                                )
+
+                        );
+
+                    }
+
+                    const uploadedPhotos =
+                        await Promise.all(
+
+                            files["photos"].map(file =>
+                                this.processImage(file)
+                            )
+
+                        );
+
+                    photos =
+                        uploadedPhotos.join(",");
+
+                }
+
+                await psychology.update({
+
+                    ...req.body,
+
+                    main_photo: mainPhoto,
+
+                    photos,
+
+                });
+
+                res.json(psychology);
+
+            } catch (e) {
+
+                console.error(e);
+
+                res.status(500).json({
+
+                    message: "Update psychology error",
+
+                });
+
+            }
+
+        });
+
+    };
+    deletePsychology: RequestHandler = async (req, res) => {
 
         try {
+
+            const id = Number(req.params.id);
+
+            if (isNaN(id)) {
+
+                return res.status(400).json({
+                    message: "Invalid id",
+                });
+
+            }
+
             const psychology = await Psychology.findByPk(id);
 
             if (!psychology) {
-                res.status(404).json({ message: "Psychology not found" });
-                return;
+
+                return res.status(404).json({
+                    message: "Psychology not found",
+                });
+
             }
 
-            const data = psychology.get();
-            const filesToDelete = [
-                data.main_photo,
-                ...(data.photos ? data.photos.split(",").map((photo: string) => photo.trim()) : []),
-            ].filter(Boolean);
+            const files = [
 
-            await Promise.all(filesToDelete.map(removeFile));
+                psychology.main_photo,
+
+                ...(psychology.photos
+                    ? psychology.photos
+                        .split(",")
+                        .map(photo => photo.trim())
+                    : []),
+
+            ].filter(
+                (file): file is string => !!file
+            );
+
+            await Promise.all(
+                files.map(file =>
+                    this.deleteFile(file)
+                )
+            );
+
             await psychology.destroy();
 
-            res.status(200).json({ message: "Psychology deleted successfully" });
+            res.json({
+                message: "Psychology deleted successfully",
+            });
+
         } catch (e) {
-            console.error("Error deleting psychology:", e);
-            res.status(500).json({ message: "Error deleting psychology" });
+
+            console.error(e);
+
+            res.status(500).json({
+                message: "Delete psychology error",
+            });
+
         }
+
     };
+
 }
 
 export const psychologyController = new PsychologyController();

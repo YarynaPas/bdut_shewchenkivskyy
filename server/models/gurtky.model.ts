@@ -1,5 +1,6 @@
 import { Model, DataTypes, Optional } from "sequelize";
 import { sequelize } from "../config/database";
+import {ScheduleItem} from "../enums/Schedule-time-interface";
 
 export type Napryam =
     | "Художньо-естетичний відділ"
@@ -17,6 +18,7 @@ export interface GurtkyAttributes {
     pictograma: string;
     long_description: string;
     photos: string;
+    schedule: ScheduleItem[] | null;
 }
 
 export interface GurtkyCreationAttributes
@@ -36,6 +38,7 @@ export class Gurtky
     pictograma!: string;
     long_description!: string;
     photos!: string;
+    schedule!: ScheduleItem[] | null;
 }
 
 Gurtky.init(
@@ -93,6 +96,10 @@ Gurtky.init(
 
         photos: {
             type: DataTypes.TEXT,
+            allowNull: true,
+        },
+        schedule: {
+            type: DataTypes.JSON,
             allowNull: true,
         },
     },

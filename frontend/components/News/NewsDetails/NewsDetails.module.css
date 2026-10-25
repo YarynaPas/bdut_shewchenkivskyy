@@ -1,0 +1,1039 @@
+/* ================================================= */
+/* SECTION */
+/* ================================================= */
+
+.section {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 50px 20px 110px;
+
+    background:
+            url("/EventsNewsBG.svg")
+            center top / cover
+            no-repeat;
+
+}
+
+.container {
+
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+}
+
+/* ================================================= */
+/* BACK */
+/* ================================================= */
+
+.back {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 25px;
+
+    color: #8f3bab;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: .3s;
+
+}
+
+.back span {
+
+    font-size: 25px;
+
+    transition: .3s;
+
+}
+
+.back:hover {
+
+    color: #71308b;
+
+}
+
+.back:hover span {
+
+    transform: translateX(-5px);
+
+}
+
+/* ================================================= */
+/* ARTICLE */
+/* ================================================= */
+
+.article {
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border-radius: 38px;
+
+    box-shadow:
+            0 25px 70px rgba(80, 30, 100, .12);
+
+}
+
+/* ================================================= */
+/* HERO */
+/* ================================================= */
+
+.hero {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 520px;
+
+    max-height: 650px;
+
+    overflow: hidden;
+
+}
+
+/*
+   Не робимо object-fit: cover,
+   щоб головна фотографія не обрізалась.
+*/
+
+.heroImage {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 650px;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    background: #f7f2fa;
+
+}
+
+/* ================================================= */
+/* HERO OVERLAY */
+/* ================================================= */
+
+.heroOverlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+            linear-gradient(
+                    to top,
+                    rgba(20, 10, 25, .78),
+                    rgba(20, 10, 25, .08) 65%,
+                    transparent
+            );
+
+    pointer-events: none;
+
+}
+
+/* ================================================= */
+/* HERO CONTENT */
+/* ================================================= */
+
+.heroContent {
+
+    position: absolute;
+
+    left: 55px;
+
+    right: 55px;
+
+    bottom: 45px;
+
+    color: #ffffff;
+
+}
+
+.heroContent h1 {
+
+    max-width: 900px;
+
+    margin: 15px 0 0;
+
+    font-size: 52px;
+
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    text-shadow:
+            0 3px 20px rgba(0,0,0,.25);
+
+}
+
+/* ================================================= */
+/* DATE */
+/* ================================================= */
+
+.date {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 10px 19px;
+
+    border-radius: 40px;
+
+    background: #ffffff;
+
+    color: #8f3bab;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    box-shadow:
+            0 8px 25px rgba(0,0,0,.15);
+
+}
+
+/* ================================================= */
+/* ARTICLE CONTENT */
+/* ================================================= */
+
+.articleContent {
+
+    max-width: 920px;
+
+    margin: 0 auto;
+
+    padding: 55px 30px 25px;
+
+}
+
+/* ================================================= */
+/* SHORT DESCRIPTION */
+/* ================================================= */
+
+.short {
+
+    margin: 0 0 35px;
+
+    padding: 22px 28px;
+
+    border-left: 5px solid #9c3fba;
+
+    border-radius: 0 18px 18px 0;
+
+    background:
+            linear-gradient(
+                    90deg,
+                    #faf1fd,
+                    #ffffff
+            );
+
+    color: #555;
+
+    font-size: 22px;
+
+    line-height: 1.65;
+
+    font-weight: 500;
+
+}
+
+/* ================================================= */
+/* TEXT */
+/* ================================================= */
+
+.text {
+
+    color: #333;
+
+    font-size: 19px;
+
+    line-height: 1.9;
+
+    white-space: pre-line;
+
+}
+
+.text p {
+
+    margin-bottom: 24px;
+
+}
+
+/* ================================================= */
+/* GALLERY SECTION */
+/* ================================================= */
+
+.gallerySection {
+
+    margin-top: 40px;
+
+    padding: 55px 55px 65px;
+
+    background:
+            linear-gradient(
+                    180deg,
+                    #fcf8fd,
+                    #ffffff
+            );
+
+    border-top: 1px solid #f1e5f5;
+
+}
+
+.sectionHeading {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 35px;
+
+}
+
+.sectionHeading span {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #f1ddf7;
+
+    color: #8f3bab;
+
+    font-size: 19px;
+
+}
+
+.sectionHeading h2 {
+
+    margin: 0;
+
+    color: #8f3bab;
+
+    font-size: 38px;
+
+    font-weight: 800;
+
+}
+
+/* ================================================= */
+/* GALLERY */
+/* ================================================= */
+
+.gallery {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+
+}
+
+/* ================================================= */
+/* GALLERY CARD */
+/* ================================================= */
+
+.galleryCard {
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border-radius: 24px;
+
+    background: #ffffff;
+
+    box-shadow:
+            0 10px 30px rgba(0,0,0,.08);
+
+    transition:
+            transform .3s ease,
+            box-shadow .3s ease;
+
+}
+
+.galleryCard:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+            0 18px 45px rgba(143,59,171,.18);
+
+}
+
+/* ================================================= */
+/* IMAGE LINK */
+/* ================================================= */
+
+.galleryImageLink {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #f7f2fa;
+
+    text-decoration: none;
+
+}
+
+/*
+    ВАЖЛИВО:
+    contain замість cover.
+    Фото не обрізається.
+*/
+
+.galleryImage {
+
+    display: block;
+
+    width: 100%;
+
+    height: 280px;
+
+    object-fit: contain;
+
+    transition:
+            transform .45s ease;
+
+}
+
+.galleryCard:hover .galleryImage {
+
+    transform: scale(1.035);
+
+}
+
+/* ================================================= */
+/* ZOOM ICON */
+/* ================================================= */
+
+.zoom {
+
+    position: absolute;
+
+    right: 15px;
+
+    top: 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 50%;
+
+    background:
+            rgba(255,255,255,.92);
+
+    color: #8f3bab;
+
+    font-size: 22px;
+
+    box-shadow:
+            0 5px 15px rgba(0,0,0,.12);
+
+    opacity: 0;
+
+    transform: scale(.8);
+
+    transition: .3s;
+
+}
+
+.galleryCard:hover .zoom {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+}
+
+/* ================================================= */
+/* DOWNLOAD */
+/* ================================================= */
+
+.downloadButton {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 9px;
+
+    min-height: 48px;
+
+    padding: 10px;
+
+    border-top: 1px solid #eee;
+
+    background: #ffffff;
+
+    color: #8f3bab;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: .3s;
+
+}
+
+.downloadButton:hover {
+
+    background: #f7edfb;
+
+}
+
+.downloadButton:first-letter {
+
+    font-size: 20px;
+
+}
+
+/* ================================================= */
+/* VIDEO */
+/* ================================================= */
+
+.videoSection {
+
+    padding: 60px 55px 65px;
+
+    background: #ffffff;
+
+    border-top: 1px solid #f1e5f5;
+
+}
+
+.videoWrapper {
+
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    background: #111;
+
+    box-shadow:
+            0 15px 45px rgba(0,0,0,.13);
+
+}
+
+/*
+    aspect-ratio потрібний iframe.
+*/
+
+.videoWrapper:has(iframe) {
+
+    aspect-ratio: 16 / 9;
+
+}
+
+/* ================================================= */
+/* VIDEO */
+/* ================================================= */
+
+.video {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: 500px;
+
+    border: none;
+
+    background: #111;
+
+}
+
+iframe.video {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 0;
+
+}
+
+/* ================================================= */
+/* VIDEO LINK */
+/* ================================================= */
+
+.videoLink {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 18px;
+
+    color: #8f3bab;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+}
+
+.videoLink:hover {
+
+    text-decoration: underline;
+
+}
+
+/* ================================================= */
+/* BOTTOM */
+/* ================================================= */
+
+.bottom {
+
+    display: flex;
+
+    justify-content: center;
+
+    padding: 35px 20px 55px;
+
+}
+
+.bottomButton {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 25px;
+
+    border-radius: 18px;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    #8f3bab,
+                    #bb58d8
+            );
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    box-shadow:
+            0 10px 25px rgba(143,59,171,.2);
+
+    transition: .3s;
+
+}
+
+.bottomButton:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+            0 15px 35px rgba(143,59,171,.3);
+
+}
+
+.bottomButton span {
+
+    font-size: 22px;
+
+}
+
+/* ================================================= */
+/* LOADING */
+/* ================================================= */
+
+.loading {
+
+    min-height: 600px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: #8f3bab;
+
+    font-size: 20px;
+
+}
+
+.loader {
+
+    width: 45px;
+
+    height: 45px;
+
+    border: 4px solid #ead8f1;
+
+    border-top-color: #963db5;
+
+    border-radius: 50%;
+
+    animation:
+            spin 1s linear infinite;
+
+}
+
+/* ================================================= */
+/* ERROR */
+/* ================================================= */
+
+.error {
+
+    min-height: 600px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+}
+
+.errorBox {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 55px;
+
+    border-radius: 30px;
+
+    background: #ffffff;
+
+    box-shadow:
+            0 15px 45px rgba(0,0,0,.08);
+
+}
+
+.errorIcon {
+
+    margin-bottom: 15px;
+
+    font-size: 55px;
+
+}
+
+.errorBox h1 {
+
+    margin: 0 0 20px;
+
+    color: #333;
+
+}
+
+.backButton {
+
+    padding: 13px 22px;
+
+    border-radius: 15px;
+
+    background: #8f3bab;
+
+    color: #fff;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+}
+
+/* ================================================= */
+/* ANIMATION */
+/* ================================================= */
+
+@keyframes spin {
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+/* ================================================= */
+/* TABLET */
+/* ================================================= */
+
+@media(max-width:1000px) {
+
+    .hero {
+
+        min-height: 460px;
+
+    }
+
+    .heroContent {
+
+        left: 40px;
+
+        right: 40px;
+
+        bottom: 40px;
+
+    }
+
+    .heroContent h1 {
+
+        font-size: 43px;
+
+    }
+
+    .gallery {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+    .gallerySection,
+    .videoSection {
+
+        padding-left: 35px;
+
+        padding-right: 35px;
+
+    }
+
+}
+
+/* ================================================= */
+/* MOBILE */
+/* ================================================= */
+
+@media(max-width:700px) {
+
+    .section {
+
+        padding:
+                30px 12px 70px;
+
+    }
+
+    .article {
+
+        border-radius: 25px;
+
+    }
+
+    .hero {
+
+        min-height: 350px;
+
+    }
+
+    .heroContent {
+
+        left: 24px;
+
+        right: 24px;
+
+        bottom: 25px;
+
+    }
+
+    .heroContent h1 {
+
+        font-size: 31px;
+
+    }
+
+    .date {
+
+        padding: 8px 14px;
+
+        font-size: 13px;
+
+    }
+
+    .articleContent {
+
+        padding:
+                35px 22px 20px;
+
+    }
+
+    .short {
+
+        padding:
+                18px 20px;
+
+        font-size: 18px;
+
+    }
+
+    .text {
+
+        font-size: 17px;
+
+        line-height: 1.8;
+
+    }
+
+    .gallerySection,
+    .videoSection {
+
+        padding:
+                40px 20px;
+
+    }
+
+    .sectionHeading h2 {
+
+        font-size: 30px;
+
+    }
+
+    .gallery {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+    }
+
+    .galleryImage {
+
+        height: auto;
+
+        min-height: 220px;
+
+        max-height: 500px;
+
+    }
+
+    .video {
+
+        min-height: 260px;
+
+    }
+
+    .videoSection {
+
+        margin-top: 0;
+
+    }
+
+}
+
+/* ================================================= */
+/* SMALL MOBILE */
+/* ================================================= */
+
+@media(max-width:450px) {
+
+    .hero {
+
+        min-height: 280px;
+
+    }
+
+    .heroContent h1 {
+
+        font-size: 25px;
+
+    }
+
+    .short {
+
+        font-size: 17px;
+
+    }
+
+    .text {
+
+        font-size: 16px;
+
+    }
+
+    .downloadButton {
+
+        min-height: 45px;
+
+    }
+
+}

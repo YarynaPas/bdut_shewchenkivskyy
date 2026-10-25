@@ -1,0 +1,291 @@
+.banner {
+    position: relative;
+    overflow: hidden;
+
+    min-height: 380px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 30px 10px;
+}
+
+.background {
+    object-fit: cover;
+    object-position: center;
+    z-index: -1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1320px;
+    width: 100%;
+
+    margin: 0 auto;
+}
+
+.left {
+    position: relative;
+
+    width: 480px;
+
+    margin-left: 5px;
+}
+
+.left h1 {
+    margin: 0 0 18px;
+    font-size: 58px;
+    font-weight: 800;
+
+    line-height: 1.05;
+
+    color: #111;
+}
+
+.left h1 span {
+    color: #8f3bab;
+}
+
+.left p {
+    margin: 0;
+
+    color: #333;
+    font-weight: 500;
+    font-size: 19px;
+
+    line-height: 1.6;
+}
+
+.mission {
+    position: relative;
+
+    margin-top: 40px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    width: 390px;
+
+    padding: 16px 20px;
+
+    border-radius: 26px;
+
+    border: 3px solid #d899f5;
+
+    background: rgba(243, 221, 255, .55);
+
+    backdrop-filter: blur(8px);
+
+    box-shadow: 0 10px 30px rgba(143, 59, 171, .08);
+}
+
+.iconCircle {
+    width: 72px;
+    height: 72px;
+
+    border-radius: 50%;
+
+    background: #f4ddff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.iconCircle img {
+    width: 42px;
+    height: 42px;
+}
+
+.missionText {
+    color: #8f3bab;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    line-height: 1.45;
+}
+
+.plane {
+    position: absolute;
+
+    right: -95px;
+    bottom: 10px;
+
+    width: 90px;
+    height: 90px;
+
+    animation: planeFloat 4s ease-in-out infinite;
+}
+
+@keyframes planeFloat {
+
+    0% {
+        transform: translateY(0) rotate(-8deg);
+    }
+
+    50% {
+        transform: translate(12px, -12px) rotate(8deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-8deg);
+    }
+
+}
+
+@media (max-width:1200px) {
+
+    .banner {
+        min-height: 650px;
+    }
+
+    .left {
+        width: 430px;
+    }
+
+    .left h1 {
+        font-size: 48px;
+    }
+
+    .left p {
+        font-size: 17px;
+    }
+
+    .mission {
+        width: 360px;
+    }
+
+}
+
+@media (max-width:992px) {
+
+    .banner {
+        min-height: 900px;
+
+        align-items: flex-start;
+
+        padding-top: 60px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .left {
+        margin: 0;
+
+        width: 100%;
+        max-width: 600px;
+
+        text-align: center;
+    }
+
+    .mission {
+        margin: 40px auto 0;
+    }
+
+    .plane {
+        display: none;
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .banner {
+        min-height: 760px;
+
+        padding: 45px 20px;
+    }
+
+    .left h1 {
+        font-size: 42px;
+    }
+
+    .left p {
+        font-size: 16px;
+    }
+
+    .mission {
+        width: 100%;
+
+        max-width: 360px;
+
+        padding: 14px 18px;
+    }
+
+    .iconCircle {
+        width: 64px;
+        height: 64px;
+    }
+
+    .iconCircle img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .missionText {
+        font-size: 15px;
+    }
+
+}
+
+@media (max-width:480px) {
+
+    .banner {
+        min-height: 640px;
+    }
+
+    .left h1 {
+        font-size: 34px;
+    }
+
+    .left p {
+        font-size: 15px;
+    }
+
+    .mission {
+        gap: 14px;
+
+        padding: 12px 16px;
+    }
+
+    .iconCircle {
+        width: 56px;
+        height: 56px;
+    }
+
+    .iconCircle img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .missionText {
+        font-size: 14px;
+    }
+
+}
+
+/* Mobile-specific banner artwork */
+.mobileBackground {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .background {
+        display: none;
+    }
+
+    .mobileBackground {
+        display: block;
+        object-fit: cover;
+        object-position: center;
+    }
+}

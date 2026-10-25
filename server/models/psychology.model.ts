@@ -9,6 +9,7 @@ export interface PsychologyAttributes {
     date: Date;
     main_photo: string | null;
     photos: string | null;
+    long_description: string | null;
 }
 
 export interface UserCreationAttributes extends Optional<PsychologyAttributes, 'id'> {}
@@ -20,6 +21,7 @@ export class Psychology extends Model<PsychologyAttributes, UserCreationAttribut
     date!: Date;
     main_photo!: string | null;
     photos!: string | null;
+    long_description!: string | null;
 }
 
 Psychology.init(
@@ -50,6 +52,10 @@ Psychology.init(
             type: DataTypes.STRING,
             allowNull: true,
         },
+        long_description:{
+            type: DataTypes.STRING,
+            allowNull:true,
+        }
     },
     {
         sequelize,

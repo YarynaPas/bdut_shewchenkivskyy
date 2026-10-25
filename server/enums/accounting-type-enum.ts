@@ -1,5 +1,14 @@
 export enum AccountingTypeEnum {
-    Osnovny_documents = "Основні документи",
-    Nakazy = "Накази",
-    Atestacia= "Атестація"
+
+    Diyalnist = "Діяльність",
+
+    Ustanovchi_documents =
+        "Установчі документи",
+
+    Atestacia =
+        "Атестація",
+
+    Nakazy =
+        "Накази",
+
 }

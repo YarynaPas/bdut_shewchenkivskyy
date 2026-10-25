@@ -183,40 +183,197 @@ class NewsController {
 
             res.json({
                 ...news.toJSON(),
-                main_photo: this.getFullImageUrl(req, news.main_photo),
-                photos: news.photos?.split(',').map(p => this.getFullImageUrl(req, p)) || [],
+
+                main_photo:
+                    this.getFullImageUrl(
+                        req,
+                        news.main_photo
+                    ),
+
+                photos:
+                    news.photos
+                        ?.split(",")
+                        .map(p =>
+                            this.getFullImageUrl(req, p)
+                        ) || [],
+
+                video:
+                    this.getFullImageUrl(
+                        req,
+                        news.video
+                    ),
             });
         } catch (e) {
             res.status(500).json({ message: 'Error' });
         }
     };
-
     updateNews: RequestHandler = async (req, res) => {
+
         upload(req, res, async (err) => {
+
             try {
-                // FIX 2: явний Number() щоб уникнути string | string[]
-                const id = Number(req.params.id);
-                if (isNaN(id)) return res.status(400).json({ message: 'Invalid id' });
 
-                const news = await News.findByPk(id);
-                if (!news) return res.status(404).json({ message: 'Not found' });
+                /* ========================================= */
+                /* MULTER ERROR */
+                /* ========================================= */
 
-                const files = req.files as { [fieldname: string]: Express.Multer.File[] };
-                let mainPhoto = news.main_photo;
+                if (err) {
 
-                if (files['main_photo']?.[0]) {
-                    // FIX 3: перевірка на null перед deleteFile
-                    if (news.main_photo) await this.deleteFile(news.main_photo);
-                    mainPhoto = await this.processImage(files['main_photo'][0].buffer);
+                    console.error(
+                        "Multer error:",
+                        err
+                    );
+
+                    return res.status(400).json({
+                        message:
+                            err instanceof Error
+                                ? err.message
+                                : "Помилка завантаження файлу"
+                    });
+
                 }
 
-                await news.update({ ...req.body, main_photo: mainPhoto });
-                res.json(news);
+
+                /* ========================================= */
+                /* ID */
+                /* ========================================= */
+
+                const id =
+                    Number(req.params.id);
+
+
+                if (Number.isNaN(id)) {
+
+                    return res.status(400).json({
+                        message: "Invalid id"
+                    });
+
+                }
+
+
+                /* ========================================= */
+                /* FIND NEWS */
+                /* ========================================= */
+
+                const news =
+                    await News.findByPk(id);
+
+
+                if (!news) {
+
+                    return res.status(404).json({
+                        message: "Not found"
+                    });
+
+                }
+
+
+                /* ========================================= */
+                /* FILES */
+                /* ========================================= */
+
+                const files =
+                    req.files as {
+                        [fieldname: string]:
+                            Express.Multer.File[]
+                    };
+
+
+                /* ========================================= */
+                /* CURRENT MAIN PHOTO */
+                /* ========================================= */
+
+                let mainPhoto =
+                    news.main_photo;
+
+
+                /* ========================================= */
+                /* NEW MAIN PHOTO */
+                /* ========================================= */
+
+                if (
+                    files?.["main_photo"]?.[0]
+                ) {
+
+                    const file =
+                        files["main_photo"][0];
+
+
+                    /*
+                     * Видаляємо старе фото
+                     */
+
+                    if (news.main_photo) {
+
+                        await this.deleteFile(
+                            news.main_photo
+                        );
+
+                    }
+
+
+                    /*
+                     * Обробляємо нове фото
+                     */
+
+                    mainPhoto =
+                        await this.processImage(
+                            file.buffer
+                        );
+
+                }
+
+
+                /* ========================================= */
+                /* UPDATE */
+                /* ========================================= */
+
+                await news.update({
+
+                    title:
+                        req.body.title ??
+                        news.title,
+
+                    description:
+                        req.body.description ??
+                        news.description,
+
+                    short_description:
+                        req.body.short_description ??
+                        news.short_description,
+
+                    main_photo:
+                    mainPhoto,
+
+                });
+
+
+                /* ========================================= */
+                /* RESPONSE */
+                /* ========================================= */
+
+                return res.status(200).json(
+                    news
+                );
+
             } catch (e) {
-                res.status(500).json({ message: 'Update error' });
+
+                console.error(
+                    "Update news error:",
+                    e
+                );
+
+                return res.status(500).json({
+                    message:
+                        "Update error"
+                });
+
             }
+
         });
+
     };
+
 
     deleteNews: RequestHandler = async (req, res) => {
         try {

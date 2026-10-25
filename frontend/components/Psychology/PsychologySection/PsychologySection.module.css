@@ -1,0 +1,328 @@
+.section {
+
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 100vh;
+
+    padding: 70px 20px 120px;
+
+
+    background-image: url("/EventsNewsBG.svg");
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    background-position: center top;
+
+}
+
+/* ================================= */
+
+.container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 1320px;
+
+    margin: 0 auto;
+
+}
+
+/* ================================= */
+
+.heading {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 17px;
+
+    margin-bottom: 55px;
+
+}
+
+.title {
+
+    margin: 0;
+
+    color: #8f3bab;
+
+    font-size: 56px;
+
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    text-align: center;
+
+}
+
+.headingStar {
+
+    animation:
+            headingStarFloat 3s ease-in-out infinite;
+
+}
+
+.headingStar:last-child {
+
+    animation-delay: .7s;
+
+}
+
+/* ================================= */
+/* DECORATIVE STARS */
+/* ================================= */
+
+.backgroundDecor {
+
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+}
+
+.star {
+
+    position: absolute;
+
+    opacity: .35;
+
+    animation:
+            floatingStar 6s ease-in-out infinite;
+
+}
+
+.star1 {
+
+    top: 12%;
+
+    left: 5%;
+
+}
+
+.star2 {
+
+    top: 27%;
+
+    right: 7%;
+
+    animation-delay: 1.5s;
+
+}
+
+.star3 {
+
+    top: 58%;
+
+    left: 8%;
+
+    animation-delay: 3s;
+
+}
+
+.star4 {
+
+    bottom: 9%;
+
+    right: 5%;
+
+    animation-delay: 4.5s;
+
+}
+
+/* ================================= */
+
+.loading {
+
+    min-height: 500px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: #8f3bab;
+
+    font-size: 19px;
+
+}
+
+.loader {
+
+    width: 45px;
+
+    height: 45px;
+
+    border: 4px solid #ead8f1;
+
+    border-top-color: #963db5;
+
+    border-radius: 50%;
+
+    animation: spin 1s linear infinite;
+
+}
+
+/* ================================= */
+
+.error {
+
+    max-width: 600px;
+
+    margin: 50px auto;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: #fff;
+
+    color: #a33;
+
+    text-align: center;
+
+    box-shadow:
+            0 10px 30px rgba(0,0,0,.06);
+
+}
+
+/* ================================= */
+
+@keyframes spin {
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+@keyframes floatingStar {
+
+    0% {
+
+        transform:
+                translateY(0)
+                rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+                translateY(-18px)
+                rotate(12deg);
+
+    }
+
+    100% {
+
+        transform:
+                translateY(0)
+                rotate(0deg);
+
+    }
+
+}
+
+@keyframes headingStarFloat {
+
+    0% {
+
+        transform:
+                translateY(0)
+                rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+                translateY(-7px)
+                rotate(10deg);
+
+    }
+
+    100% {
+
+        transform:
+                translateY(0)
+                rotate(0deg);
+
+    }
+
+}
+
+/* ================================= */
+
+@media (max-width: 768px) {
+
+    .section {
+
+        padding:
+                50px 16px 80px;
+
+    }
+
+    .heading {
+
+        gap: 10px;
+
+        margin-bottom: 38px;
+
+    }
+
+    .title {
+
+        font-size: 38px;
+
+    }
+
+    .headingStar {
+
+        width: 27px;
+
+        height: 27px;
+
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .title {
+
+        font-size: 31px;
+
+    }
+
+    .headingStar {
+
+        display: none;
+
+    }
+
+}

@@ -1,0 +1,26 @@
+cat > .gitignore <<'EOF'
+.env
+.env.*
+!.env.example
+
+node_modules/
+.next/
+dist/
+build/
+coverage/
+
+*.log
+npm-debug.log*
+
+*.sql
+*.sql.gz
+*.dump
+backups/
+
+*.pem
+*.key
+id_ed25519
+id_rsa
+EOF
+# Dependencies
+node_modules/

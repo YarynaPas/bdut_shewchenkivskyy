@@ -1,0 +1,192 @@
+.section {
+    position: relative;
+
+    padding: 70px 20px 90px;
+
+    background: #fff;
+}
+
+.container {
+    max-width: 1320px;
+
+    margin: 0 auto;
+}
+
+.loading {
+
+    min-height: 500px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #8f3bab;
+
+    font-size: 28px;
+    font-weight: 700;
+}
+/* ========================= */
+/* SHOW ALL */
+/* ========================= */
+
+.showAllWrapper {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 35px;
+
+}
+
+.showAllButton {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    min-width: 190px;
+
+    height: 52px;
+
+    padding: 0 22px;
+
+    border: 1.5px solid #cba7d6;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    color: #8f3bab;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: 750;
+
+    cursor: pointer;
+
+    box-shadow:
+            0 7px 20px
+            rgba(143, 59, 171, .08);
+
+    transition:
+            transform .3s ease,
+            background .3s ease,
+            color .3s ease,
+            box-shadow .3s ease;
+
+}
+
+
+.showAllButton:hover {
+
+    transform:
+            translateY(-3px);
+
+    background:
+            #8f3bab;
+
+    color:
+            #ffffff;
+
+    box-shadow:
+            0 13px 30px
+            rgba(143, 59, 171, .18);
+
+}
+
+
+/* ========================= */
+/* ARROW */
+/* ========================= */
+
+.showAllArrow {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 26px;
+
+    height: 26px;
+
+    border-radius: 50%;
+
+    background:
+            #f1e2f6;
+
+    color:
+            #8f3bab;
+
+    font-size: 17px;
+
+    line-height: 1;
+
+    transition:
+            transform .3s ease,
+            background .3s ease,
+            color .3s ease;
+
+}
+
+
+.showAllButton:hover
+.showAllArrow {
+
+    background:
+            rgba(255,255,255,.2);
+
+    color:
+            #ffffff;
+
+}
+
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 700px) {
+
+    .showAllWrapper {
+
+        margin-top: 28px;
+
+    }
+
+    .showAllButton {
+
+        width: 100%;
+
+        max-width: 360px;
+
+    }
+
+}
+@media (max-width:1200px) {
+
+    .section {
+        padding: 60px 20px 80px;
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .section {
+        padding: 50px 16px 70px;
+    }
+
+    .loading {
+        font-size: 22px;
+    }
+
+}

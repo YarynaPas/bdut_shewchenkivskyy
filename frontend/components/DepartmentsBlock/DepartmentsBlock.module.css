@@ -1,0 +1,129 @@
+.section {
+    padding: 60px 0 70px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+
+.background1 {
+    z-index: -1;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.titleBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+
+    margin-bottom: 12px;
+}
+
+.titleBlock h2 {
+    margin: 0;
+    font-size: 38px;
+    font-weight: 800;
+
+    color: #8e00cb;
+}
+
+.subtitle {
+    max-width: 760px;
+
+    text-align: center;
+
+    color: #444;
+
+    margin: 0 auto 45px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.star {
+    position: absolute;
+    z-index: 2;
+
+    animation: float 3.5s ease-in-out infinite;
+}
+
+.star1 {
+    top: 120px;
+    left: 70px;
+}
+
+.star2 {
+    top: 250px;
+    right: 100px;
+
+    animation-delay: 1.4s;
+}
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(8deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+}
+
+@media (max-width:1200px) {
+
+    .titleBlock h2 {
+        font-size: 48px;
+    }
+
+}
+
+@media (max-width:900px) {
+
+    .section {
+        padding: 90px 0 70px;
+    }
+
+    .titleBlock {
+        flex-wrap: wrap;
+    }
+
+    .titleBlock h2 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .subtitle {
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
+
+}
+
+@media (max-width:600px) {
+
+    .titleBlock h2 {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+}
