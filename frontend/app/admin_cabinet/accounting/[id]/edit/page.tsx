@@ -12,8 +12,9 @@ import { useParams, useRouter } from "next/navigation";
 
 import styles from "./EditAccounting.module.css";
 
+import { AccountingTypeEnum } from "@/interfaces/AccountingTypeEnum";
+
 import {
-    AccountingTypeEnum,
     AdminAccounting,
     getAdminAccountingById,
     updateAccounting,
@@ -166,9 +167,8 @@ export default function EditAccountingPage() {
                     /* ========================= */
 
                     setCategory(
-                        data.category
+                        data.category as AccountingTypeEnum | ""
                     );
-
 
                     /* ========================= */
                     /* NAME */
