@@ -1,0 +1,341 @@
+
+.page {
+    min-height: 100vh;
+    padding: 40px 24px 80px;
+    background: #f5f6fa;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.subtitle {
+    display: block;
+    margin-bottom: 10px;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.header h1 {
+    margin: 0;
+    color: #172033;
+    font-size: 32px;
+    font-weight: 750;
+}
+
+.header p {
+    margin: 10px 0 0;
+    color: #64748b;
+    font-size: 15px;
+}
+
+.error,
+.success {
+    margin-bottom: 20px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.error {
+    color: #b42318;
+    background: #feeceb;
+    border: 1px solid #f7c6c2;
+}
+
+.success {
+    color: #167647;
+    background: #e9f8ef;
+    border: 1px solid #b7e6c8;
+}
+
+.formCard {
+    margin-bottom: 40px;
+    padding: 28px;
+    background: #fff;
+    border: 1px solid #e8eaf0;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(20, 30, 55, 0.04);
+}
+
+.formCard h2,
+.listHeader h2 {
+    margin: 0;
+    color: #172033;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.field label {
+    color: #344054;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.field input {
+    width: 100%;
+    min-height: 46px;
+    padding: 11px 13px;
+    color: #172033;
+    background: #fff;
+    border: 1px solid #d8dce5;
+    border-radius: 9px;
+    outline: none;
+    font: inherit;
+    font-size: 14px;
+}
+
+.field input:focus {
+    border-color: #4778dc;
+    box-shadow: 0 0 0 3px rgba(71, 120, 220, 0.12);
+}
+
+.field input[type="file"] {
+    padding: 9px;
+}
+
+.hint {
+    color: #8490a3;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.selectedFile {
+    grid-column: 1 / -1;
+    padding: 12px 14px;
+    color: #315ca8;
+    background: #eff5ff;
+    border-radius: 8px;
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.formActions {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 3px;
+}
+
+.primaryButton,
+.secondaryButton,
+.editButton,
+.deleteButton {
+    min-height: 42px;
+    padding: 10px 17px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 650;
+    transition: background 0.2s, opacity 0.2s;
+}
+
+.primaryButton {
+    color: #fff;
+    background: #315fc4;
+}
+
+.primaryButton:hover {
+    background: #254da5;
+}
+
+.secondaryButton {
+    color: #344054;
+    background: #eef0f4;
+}
+
+.secondaryButton:hover {
+    background: #e1e4ea;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.listSection {
+    margin-top: 35px;
+}
+
+.listHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.count {
+    display: inline-flex;
+    min-width: 28px;
+    height: 28px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+    color: #315fc4;
+    background: #eaf0ff;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.status,
+.empty {
+    padding: 45px 20px;
+    color: #64748b;
+    background: #fff;
+    border: 1px solid #e8eaf0;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.emptyIcon {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 38px;
+}
+
+.empty h3 {
+    margin: 0 0 8px;
+    color: #344054;
+    font-size: 17px;
+}
+
+.empty p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.card {
+    min-width: 0;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e8eaf0;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(20, 30, 55, 0.04);
+}
+
+.imageWrapper {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #eef0f4;
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.cardContent {
+    padding: 17px;
+}
+
+.cardContent h3 {
+    margin: 0 0 13px;
+    color: #172033;
+    font-size: 16px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.metadata {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    margin-bottom: 17px;
+    color: #8490a3;
+    font-size: 12px;
+}
+
+.cardActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.editButton {
+    flex: 1;
+    color: #315fc4;
+    background: #edf2ff;
+}
+
+.editButton:hover {
+    background: #dfe8ff;
+}
+
+.deleteButton {
+    flex: 1;
+    color: #c03932;
+    background: #fff0ef;
+}
+
+.deleteButton:hover {
+    background: #ffe1df;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .page {
+        padding: 25px 15px 50px;
+    }
+
+    .header h1 {
+        font-size: 25px;
+    }
+
+    .formCard {
+        padding: 20px 16px;
+    }
+
+    .form {
+        grid-template-columns: 1fr;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .formActions {
+        flex-direction: column;
+    }
+
+    .formActions button {
+        width: 100%;
+    }
+}

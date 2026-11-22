@@ -9,6 +9,7 @@ import {
     getAdminRozklad,
     Rozklad as RozkladType,
 } from "@/services/rozkladApi";
+import CitizenAppealImages from "@/components/CitizenAppealImages/CitizenAppealImages";
 
 export default function ReportingPage() {
     const [rozklad, setRozklad] = useState<RozkladType[]>([]);
@@ -35,6 +36,7 @@ export default function ReportingPage() {
             <ReportingSection />
 
             <Rozklad items={rozklad} />
+            <CitizenAppealImages />
         </>
     );
 }

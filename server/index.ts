@@ -13,6 +13,7 @@ import nabirRouter from "./routers/nabir.router";
 import { userRouter } from "./routers/user.router";
 import rozkladRouter from "./routers/rozklad.router";
 import psychologyRouter from "./routers/psychology.router";
+import citizenAppealImageRouter from "./routers/citizen-appeal-image.router";
 
 const app = express();
 
@@ -38,6 +39,7 @@ app.use('/gurtky', gurtkyRouter);
 app.use('/nabir', nabirRouter);
 app.use('/rozklad', rozkladRouter);
 app.use('/psychology', psychologyRouter)
+app.use('/citizen',citizenAppealImageRouter)
 app.use('/{*path}', (err: Error, req: Request, res: Response, next: NextFunction) => {
     if (err instanceof ApiError) {
         res.status(err.statusCode || 500).send(err.message);

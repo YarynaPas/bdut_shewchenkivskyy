@@ -77,6 +77,13 @@ const sections: AdminSection[] = [
         icon: "🕐",
         color: "cyan",
     },
+    {
+        title: "Графік особистого прийому громадян",
+        description: "Керування зображеннями особистого прийому громадян",
+        href: "/admin_cabinet/citizen",
+        icon: "📢",
+        color: "blue",
+    },
 
 ];
 

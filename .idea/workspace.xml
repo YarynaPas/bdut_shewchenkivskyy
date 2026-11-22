@@ -5,159 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0008442-f8ed-4622-8efc-7da36b0c9a4e" name="Changes" comment="fix server">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/about/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/AdminCabinet.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/accounting/AccountingAdmin.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/accounting/[id]/edit/EditAccounting.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/accounting/[id]/edit/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/accounting/create/CreateAccounting.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/accounting/create/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/accounting/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/employees/EmployeesAdmin.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/employees/[id]/update/EditEmployee.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/employees/[id]/update/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/employees/create/CreateEmployee.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/employees/create/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/employees/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/events/EventsAdmin.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/events/[id]/edit/EditEvent.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/events/[id]/edit/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/events/create/CreateEvent.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/events/create/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/events/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/gurtky/GurtkyAdmin.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/gurtky/[id]/edit/EditGurtok.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/gurtky/[id]/edit/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/gurtky/[id]/update/EditGurtok.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/gurtky/[id]/update/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/gurtky/create/CreateGurtok.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/gurtky/create/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/gurtky/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/news/NewsAdmin.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/news/[id]/edit/EditNews.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/news/[id]/edit/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/news/[id]/update/EditNews.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/news/[id]/update/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/news/create/CreateNews.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/news/create/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/news/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/psychology/PsychologyAdmin.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/psychology/[id]/edit/EditPsychology.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/psychology/[id]/edit/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/psychology/create/CreatePsychology.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/psychology/create/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/psychology/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/rozklad/RozkladAdmin.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/rozklad/create/CreateRozklad.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/rozklad/create/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/admin_cabinet/rozklad/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/event/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/gurtky/[id]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/gurtky/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/login/login.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/login/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/news/[id]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/news/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/psychology/[id]/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/psychology/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/app/reports/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/AboutBannerComponent/AboutBannerComponent.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/AboutBannerComponent/AboutBannerComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/AdvantagesComponent/AdvantagesComponent.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/AdvantagesComponent/AdvantagesComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/DepartmentsBlock/DepartmentsBlock.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/DepartmentsBlock/DepartmentsBlock.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/DepartmentsSection/DepartmentsSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Events/EventCard/EventCard.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Events/EventCard/EventCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Events/EventsGrid/EventsGrid.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Events/EventsGrid/EventsGrid.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Events/EventsSection/EventsSection.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Events/EventsSection/EventsSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/EventsBlock/eventsBlock.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/EventsBlock/eventsBlock.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Footer/Footer.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Footer/Footer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Gurtky/ CategoryTabs/CategoryTabs.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Gurtky/ CategoryTabs/CategoryTabs.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Gurtky/GurtkyGrid/GurtkyGrid.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Gurtky/GurtkyGrid/GurtkyGrid.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Gurtky/GurtkySection/GurtkySection.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Gurtky/GurtkySection/GurtkySection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Gurtky/Pagination/Pagination.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Gurtky/Pagination/Pagination.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Gurtky/SearchFilter/SearchFilter.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Gurtky/SearchFilter/SearchFilter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/GurtkyDetails/GurtkyDetails.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/GurtkyDetails/GurtkyDetails.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/MapComponent/MapComponent.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/MapComponent/MapComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/MapSectionComponent/MapSectionComponent.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/MapSectionComponent/MapSectionComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/News/NewsCard/NewsCard.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/News/NewsCard/NewsCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/News/NewsDetails/NewsDetails.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/News/NewsDetails/NewsDetails.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/News/NewsGrid/NewsGrid.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/News/NewsGrid/NewsGrid.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/News/NewsSection/NewsSection.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/News/NewsSection/NewsSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/News/Pagination/Pagination.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/News/Pagination/Pagination.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/NewsBlock/NewsBlock.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/NewsBlock/NewsBlock.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/NewsEventsSection/NewsEventsSection.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/NewsEventsSection/NewsEventsSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/PrinciplesComponent/PrinciplesComponent.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/PrinciplesComponent/PrinciplesComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Psychology/PsychologyCard/PsychologyCard.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Psychology/PsychologyCard/PsychologyCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Psychology/PsychologyDetails/PsychologyDetails.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Psychology/PsychologyDetails/PsychologyDetails.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Psychology/PsychologyGrid/PsychologyGrid.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Psychology/PsychologyGrid/PsychologyGrid.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Psychology/PsychologySection/PsychologySection.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Psychology/PsychologySection/PsychologySection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Reporting/ReportingSection.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Reporting/ReportingSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Rozklad/Rozklad.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/Rozklad/Rozklad.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/SocialsComponent/SocialsComponent.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/SocialsComponent/SocialsComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/TeamSection/TeamSection.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/TeamSection/TeamSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/gurtkyBanner/gurtkyBanner.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/gurtkyBanner/gurtkyBanner.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/mainBunner/MainBannerComponent.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/components/mainBunner/MainBannerComponent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/interfaces/AccountingTypeEnum.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/services/accountingApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/services/adminApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/services/employeesApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/services/eventsApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/services/gurtkyApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/services/newsApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/services/psychologyApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/services/rozkladApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/enums/Schedule-time-interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/services/adminApi.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/HeaderComponent/HeaderComponent.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/HeaderComponent/HeaderComponent.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/components/HeaderComponent/HeaderComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/HeaderComponent/HeaderComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pages/golovna.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/events.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/events.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/gurtky.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/gurtky.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/news.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/news.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/psychology.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/psychology.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/enums/accounting-type-enum.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/enums/accounting-type-enum.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/gurtky.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/gurtky.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/psychology.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/psychology.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routers/events.router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/routers/events.router.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,6 +126,9 @@
       <workItem from="1792063939545" duration="640000" />
       <workItem from="1792067946587" duration="595000" />
       <workItem from="1792324554431" duration="593000" />
+      <workItem from="1792394137723" duration="9393000" />
+      <workItem from="1793481090127" duration="837000" />
+      <workItem from="1794263688413" duration="696000" />
     </task>
     <task id="LOCAL-00001" summary="fix server">
       <option name="closed" value="true" />

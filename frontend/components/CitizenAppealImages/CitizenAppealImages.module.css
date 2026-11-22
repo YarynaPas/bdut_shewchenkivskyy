@@ -1,0 +1,173 @@
+
+.section {
+    width: 100%;
+    padding: 65px 24px;
+    background: #f7f8fc;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.subtitle {
+    display: block;
+    margin-bottom: 12px;
+    color: #4773bd;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.header h2 {
+    margin: 0;
+    color: #172033;
+    font-size: clamp(25px, 4vw, 36px);
+    font-weight: 750;
+    line-height: 1.25;
+}
+
+.header p {
+    margin: 13px 0 0;
+    color: #68758a;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.imageButton {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e5e9f0;
+    border-radius: 14px;
+    cursor: zoom-in;
+    text-align: left;
+    box-shadow: 0 5px 20px rgba(20, 35, 65, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.imageButton:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(20, 35, 65, 0.12);
+}
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 650px;
+    object-fit: contain;
+    background: #fff;
+}
+
+.imageTitle {
+    display: block;
+    padding: 15px 18px;
+    color: #26344b;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.status,
+.empty,
+.error {
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.status,
+.empty {
+    color: #64748b;
+    background: #fff;
+    border: 1px solid #e5e9f0;
+}
+
+.error {
+    color: #b42318;
+    background: #fff0ef;
+}
+
+.modal {
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px 20px;
+    background: rgba(10, 16, 28, 0.88);
+}
+
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 95vw;
+    max-height: 90vh;
+}
+
+.modalImage {
+    display: block;
+    max-width: 100%;
+    max-height: 82vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.modalContent p {
+    margin: 12px 0 0;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+}
+
+.closeButton {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    width: 42px;
+    height: 42px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 36px;
+    line-height: 1;
+}
+
+@media (max-width: 700px) {
+    .section {
+        padding: 45px 16px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .header {
+        margin-bottom: 25px;
+    }
+
+    .imageTitle {
+        padding: 13px 15px;
+    }
+}
